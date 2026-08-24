@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devenir distributeur — Interbois</title>
+    <style>
+        :root {
+            --vert: #2e6b4f;
+            --vert-fonce: #1f4a37;
+            --bois: #b98a5e;
+            --gris: #5a5a5a;
+            --gris-clair: #f4f1ec;
+            --blanc: #fff;
+            --noir: #222;
+            --bord: #e2dcd2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--noir);
+            line-height: 1.55
+        }
+
+        .wrap {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .img {
+            background-size: cover;
+            background-position: center;
+            background-color: #d8d2c6
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: linear-gradient(rgba(0, 0, 0, .35), transparent)
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 20px;
+            color: #fff
+        }
+
+        .logo span {
+            color: var(--bois)
+        }
+
+        nav ul {
+            display: flex;
+            gap: 26px;
+            list-style: none;
+            font-size: 14px
+        }
+
+        nav a {
+            color: #fff;
+            opacity: .92
+        }
+
+        nav a:hover {
+            opacity: 1;
+            text-decoration: underline
+        }
+
+        .cta-nav {
+            background: #fff;
+            color: var(--vert-fonce) !important;
+            padding: 9px 18px;
+            border-radius: 4px;
+            font-weight: 600;
+            opacity: 1
+        }
+
+        .hero {
+            position: relative;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(rgba(20, 40, 32, .55), rgba(20, 40, 32, .75)), url('https://placehold.co/1600x900/2e6b4f/fff?text=Rayon+finition+bois+en+quincaillerie');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 120px 0 80px
+        }
+
+        .hero .breadcrumb {
+            font-size: 13px;
+            opacity: .85;
+            margin-bottom: 24px
+        }
+
+        .hero .breadcrumb a {
+            color: #fff
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            line-height: 1.15;
+            max-width: 700px;
+            margin-bottom: 18px
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 560px;
+            opacity: .95
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            margin-top: 32px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 15px
+        }
+
+        .btn-blanc {
+            background: #fff;
+            color: var(--vert-fonce)
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff
+        }
+
+        .hero .confiance {
+            display: flex;
+            gap: 26px;
+            margin-top: 46px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            font-weight: 600
+        }
+
+        .hero .confiance span {
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .bande {
+            background: var(--bois);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 700
+        }
+
+        .bande em {
+            font-style: normal;
+            text-decoration: underline;
+            text-underline-offset: 4px
+        }
+
+        section {
+            padding: 70px 0
+        }
+
+        h2 {
+            font-size: 31px;
+            margin-bottom: 10px
+        }
+
+        .sous-titre {
+            color: var(--gris);
+            margin-bottom: 36px;
+            max-width: 620px;
+            font-size: 16px
+        }
+
+        .section-grise {
+            background: var(--gris-clair)
+        }
+
+        .galerie {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            gap: 14px
+        }
+
+        .galerie .img {
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .galerie .img:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2
+        }
+
+        .galerie .img:nth-child(4) {
+            grid-column: span 2
+        }
+
+        .galerie .img figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 28px 14px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(transparent, rgba(0, 0, 0, .7))
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center
+        }
+
+        .split .img {
+            border-radius: 10px;
+            min-height: 420px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .15)
+        }
+
+        .points li {
+            list-style: none;
+            display: flex;
+            gap: 16px;
+            margin-bottom: 26px
+        }
+
+        .points .ico {
+            flex: 0 0 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--gris-clair);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px
+        }
+
+        .points h3 {
+            font-size: 17px;
+            color: var(--vert-fonce);
+            margin-bottom: 4px
+        }
+
+        .points p {
+            font-size: 14px;
+            color: var(--gris)
+        }
+
+        .produits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .produit {
+            background: #fff;
+            border: 1px solid var(--bord);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s
+        }
+
+        .produit:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, .12)
+        }
+
+        .produit .img {
+            height: 210px
+        }
+
+        .produit .corps {
+            padding: 20px
+        }
+
+        .produit h3 {
+            font-size: 17px;
+            margin-bottom: 6px
+        }
+
+        .produit p {
+            font-size: 13px;
+            color: var(--gris);
+            margin-bottom: 12px
+        }
+
+        .produit a {
+            color: var(--vert);
+            font-weight: 700;
+            font-size: 14px
+        }
+
+        .produit a:hover {
+            text-decoration: underline
+        }
+
+        .ressources {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .ressource {
+            background: #fff;
+            border: 1px solid var(--bord);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column
+        }
+
+        .ressource .img {
+            height: 120px
+        }
+
+        .ressource .corps {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1
+        }
+
+        .ressource .type {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            color: var(--bois);
+            font-weight: 700
+        }
+
+        .ressource h3 {
+            font-size: 16px
+        }
+
+        .ressource p {
+            font-size: 13px;
+            color: var(--gris)
+        }
+
+        .ressource a {
+            color: var(--vert);
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: auto
+        }
+
+        .formulaire {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 44px;
+            align-items: stretch
+        }
+
+        .formulaire .img {
+            border-radius: 10px;
+            min-height: 100%;
+            background-image: url('https://placehold.co/800x900/1f4a37/fff?text=Presentoir+Interbois+en+magasin');
+            background-size: cover
+        }
+
+        form {
+            background: #fff;
+            border: 1px solid var(--bord);
+            border-radius: 10px;
+            padding: 32px
+        }
+
+        form h3 {
+            margin-bottom: 16px
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 12px 0 4px
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--bord);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px
+        }
+
+        .btn-envoyer {
+            background: var(--vert);
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 18px
+        }
+
+        .btn-envoyer:hover {
+            background: var(--vert-fonce)
+        }
+
+        .temoignages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .temoignage {
+            background: #fff;
+            border: 1px solid var(--bord);
+            border-radius: 10px;
+            padding: 24px;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--gris)
+        }
+
+        .temoignage strong {
+            display: block;
+            margin-top: 14px;
+            font-style: normal;
+            color: var(--noir);
+            font-size: 13px
+        }
+
+        footer {
+            background: var(--noir);
+            color: #ccc;
+            padding: 40px 0;
+            font-size: 13px
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px
+        }
+
+        footer a {
+            color: #fff
+        }
+
+        @media(max-width:900px) {
+
+            .galerie,
+            .produits,
+            .ressources,
+            .temoignages,
+            .formulaire,
+            .split {
+                grid-template-columns: 1fr
+            }
+
+            nav ul {
+                display: none
+            }
+
+            .hero h1 {
+                font-size: 32px
+            }
+
+            .hero {
+                min-height: auto
+            }
+
+            .galerie .img:nth-child(1) {
+                grid-column: auto;
+                grid-row: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header>
+        <nav class="wrap">
+            <div class="logo">INTERBOIS<span>.</span></div>
+            <ul>
+                <li><a href="#">Produits</a></li>
+                <li><a href="#">Présentoirs</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Professionnels</a></li>
+                <li><a href="#devis" class="cta-nav">Devenir distributeur</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ============ HÉRO ============ -->
+    <div class="hero">
+        <div class="wrap">
+            <p class="breadcrumb"><a href="#">Accueil</a> / Professionnels / Quincailleries &amp; distributeurs</p>
+            <h1>Une gamme de finition bois qui se vend — et des marges qui se défendent</h1>
+            <p>Moulures, lambris et composantes de portes qui tournent en magasin, avec présentoirs clés en main,
+                support marketing et livraison fiable vers vos succursales.</p>
+            <div class="hero-actions">
+                <a href="#devis" class="btn btn-blanc">Devenir distributeur</a>
+                <a href="#" class="btn btn-outline">Voir nos présentoirs</a>
+            </div>
+            <div class="confiance">
+                <span>🛒 Présentoirs clés en main</span>
+                <span>📦 200+ points de vente servis</span>
+                <span>🏭 Nouvelle usine &amp; centre de distribution 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ BANDE ============ -->
+    <div class="bande">🛒 Des présentoirs qui vendent, <em>une logistique qui livre à temps</em>, des marges qui
+        restent.</div>
+
+    <!-- ============ GALERIE PRÉSENTOIRS & MAGASINS ============ -->
+    <section>
+        <div class="wrap">
+            <h2>Nos présentoirs en magasin</h2>
+            <p class="sous-titre">Des présentoirs qui attirent l'œil, augmentent le panier moyen et rendent le rayon
+                finition bois plus rentable.</p>
+            <div class="galerie">
+                <div class="img"
+                    style="background-image:url('https://placehold.co/900x700/8a6f52/fff?text=Presentoir+moulures')">
+                    <figcaption>Présentoir moulures — format mural</figcaption>
+                </div>
+                <div class="img"
+                    style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Presentoir+lambris')">
+                    <figcaption>Présentoir lambris &amp; panneaux</figcaption>
+                </div>
+                <div class="img"
+                    style="background-image:url('https://placehold.co/600x400/2e6b4f/fff?text=Rayon+quincaillerie')">
+                    <figcaption>Rayon finition bois en quincaillerie</figcaption>
+                </div>
+                <div class="img"
+                    style="background-image:url('https://placehold.co/900x400/6b5a4a/fff?text=Presentoir+portes+fenetres')">
+                    <figcaption>Présentoir composantes portes &amp; fenêtres</figcaption>
+                </div>
+                <div class="img"
+                    style="background-image:url('https://placehold.co/600x400/d8b48f/fff?text=Echantillons')">
+                    <figcaption>Échantillons et nuanciers</figcaption>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ POURQUOI DEVENIR DISTRIBUTEUR ============ -->
+    <section class="section-grise">
+        <div class="wrap split">
+            <div class="img"
+                style="background-image:url('https://placehold.co/800x900/1f4a37/fff?text=Presentoir+Interbois+installe')">
+            </div>
+            <div>
+                <h2>Pourquoi devenir distributeur</h2>
+                <p class="sous-titre">Un partenaire qui fait tourner votre rayon, pas juste livrer des boîtes.</p>
+                <ul class="points">
+                    <li><span class="ico">💰</span>
+                        <div>
+                            <h3>Des marges qui se défendent</h3>
+                            <p>Tarifs de distributeur compétitifs, prix de volume et programmation saisonnière qui
+                                soutient vos ventes toute l'année.</p>
+                        </div>
+                    </li>
+                    <li><span class="ico">🛒</span>
+                        <div>
+                            <h3>Présentoirs clés en main</h3>
+                            <p>Modules de présentation, échantillons et nuanciers fournis — votre rayon est attrayant
+                                sans travail de votre équipe.</p>
+                        </div>
+                    </li>
+                    <li><span class="ico">🚚</span>
+                        <div>
+                            <h3>Logistique fiable</h3>
+                            <p>Nouvelle usine et nouveau centre de distribution en 2026 : livraison planifiée vers vos
+                                succursales, au moment promis.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GAMMES PHARES ============ -->
+    <section>
+        <div class="wrap">
+            <h2>Les gammes qui tournent en magasin</h2>
+            <p class="sous-titre">Des produits qui se vendent seuls — prouvés dans 200+ points de vente.</p>
+            <div class="produits">
+                <div class="produit">
+                    <div class="img"
+                        style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Moulures')"></div>
+                    <div class="corps">
+                        <h3>Moulures &amp; accessoires</h3>
+                        <p>Plinthes, cadrages et profils — la gamme de base qui tourne.</p><a href="#">Voir la gamme
+                            →</a>
+                    </div>
+                </div>
+                <div class="produit">
+                    <div class="img"
+                        style="background-image:url('https://placehold.co/600x400/8a6f52/fff?text=Lambris')"></div>
+                    <div class="corps">
+                        <h3>Lambris &amp; panneaux</h3>
+                        <p>Shiplap et panneaux tendance (Stria, Nōrr) — forte demande DIY.</p><a href="#">Voir la gamme
+                            →</a>
+                    </div>
+                </div>
+                <div class="produit">
+                    <div class="img"
+                        style="background-image:url('https://placehold.co/600x400/6b5a4a/fff?text=Portes+fenetres')">
+                    </div>
+                    <div class="corps">
+                        <h3>Composantes portes &amp; fenêtres</h3>
+                        <p>Jambages et bâtis — l'achat complémentaire des pro.</p><a href="#">Voir la gamme →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ RESSOURCES DISTRIBUTEUR ============ -->
+    <section class="section-grise">
+        <div class="wrap">
+            <h2>Espace distributeur</h2>
+            <p class="sous-titre">Tout pour démarrer et vendre, en un clic.</p>
+            <div class="ressources">
+                <div class="ressource">
+                    <div class="img"
+                        style="background-image:url('https://placehold.co/600x300/2e6b4f/fff?text=Kit+presentoir')">
+                    </div>
+                    <div class="corps"><span class="type">Programme</span>
+                        <h3>Kit distributeur &amp; présentoirs</h3>
+                        <p>Modules, échantillons, nuanciers et plan d'implantation.</p><a href="#">Télécharger →</a>
+                    </div>
+                </div>
+                <div class="ressource">
+                    <div class="img"
+                        style="background-image:url('https://placehold.co/600x300/1f4a37/fff?text=Catalogue')"></div>
+                    <div class="corps"><span class="type">Catalogue</span>
+                        <h3>Gamme complète 2025</h3>
+                        <p>Le catalogue produit en PDF, à jour.</p><a href="#">Télécharger →</a>
+                    </div>
+                </div>
+                <div class="ressource">
+                    <div class="img"
+                        style="background-image:url('https://placehold.co/600x300/b98a5e/fff?text=Tarifs')"></div>
+                    <div class="corps"><span class="type">Accès réservé</span>
+                        <h3>Liste de prix distributeur</h3>
+                        <p>Tarifs et conditions — sur demande, après vérification.</p><a href="#">Demander l'accès →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FORMULAIRE ============ -->
+    <section id="devis">
+        <div class="wrap formulaire">
+            <div class="img"></div>
+            <form>
+                <h3>Devenir distributeur</h3>
+                <p style="font-size:14px;color:var(--gris);margin-bottom:10px">Réponse sous 48 h ouvrées par un
+                    représentant dédié.</p>
+                <label>Entreprise *</label><input type="text" placeholder="Nom de votre commerce" required>
+                <label>Type de commerce *</label>
+                <select required>
+                    <option>Quincaillerie</option>
+                    <option>Magasin spécialisé (bois, rénovation, décoration)</option>
+                    <option>Centre de rénovation</option>
+                    <option>Autre</option>
+                </select>
+                <label>Nombre de succursales</label>
+                <input type="text" placeholder="Ex. : 1, 5, 12…">
+                <label>Nom et courriel *</label>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                    <input type="text" placeholder="Votre nom" required>
+                    <input type="email" placeholder="Courriel" required>
+                </div>
+                <label>Votre besoin</label>
+                <textarea placeholder="Présentoir, programmation, tarifs, livraison…"></textarea>
+                <button type="submit" class="btn-envoyer">Envoyer ma demande</button>
+                <p style="font-size:12px;color:var(--gris);margin-top:10px">Zéro engagement — tarifs de distributeur et
+                    conditions inclus.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============ TÉMOIGNAGES ============ -->
+    <section class="section-grise">
+        <div class="wrap">
+            <h2>Ils nous font confiance</h2>
+            <div class="temoignages">
+                <div class="temoignage">« Le présentoir moulures a doublé nos ventes au mètre linéaire. L'installation a
+                    pris une après-midi. »<strong>— Quincaillerie, Saguenay</strong></div>
+                <div class="temoignage">« Livraison à la succursale au jour promis. Nos trois magasins sont
+                    approvisionnés sans stress. »<strong>— Groupe de quincailleries, Montérégie</strong></div>
+                <div class="temoignage">« Les marges sont bonnes et le support marketing est réel : photos, nuanciers,
+                    programmation. »<strong>— Magasin spécialisé, Québec</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PIED DE PAGE ============ -->
+    <footer>
+        <div class="wrap">
+            <div>© 2025 Interbois — Saint-Odilon-de-Cranbourne, Québec</div>
+            <div><a href="#">Professionnels</a> · <a href="#">Distributeurs</a> · <a href="#">Carrières</a></div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
