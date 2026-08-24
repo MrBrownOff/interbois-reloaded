@@ -120,15 +120,15 @@
         }
 
         .hero h1 {
-            font-size: 44px;
+            font-size: 42px;
             line-height: 1.15;
-            max-width: 700px;
+            max-width: 720px;
             margin-bottom: 18px
         }
 
         .hero p {
             font-size: 18px;
-            max-width: 580px;
+            max-width: 600px;
             opacity: .95
         }
 
@@ -172,19 +172,18 @@
             gap: 8px
         }
 
+        .hero .confiance .coche {
+            color: var(--bois);
+            font-weight: 700
+        }
+
         .bande {
             background: var(--bois);
             color: #fff;
             text-align: center;
             padding: 20px;
-            font-size: 20px;
-            font-weight: 700
-        }
-
-        .bande em {
-            font-style: normal;
-            text-decoration: underline;
-            text-underline-offset: 4px
+            font-size: 17px;
+            font-weight: 600
         }
 
         section {
@@ -192,7 +191,7 @@
         }
 
         h2 {
-            font-size: 31px;
+            font-size: 30px;
             margin-bottom: 10px
         }
 
@@ -266,10 +265,10 @@
             height: 52px;
             border-radius: 50%;
             background: var(--gris-clair);
+            color: var(--vert);
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 24px
+            justify-content: center
         }
 
         .points h3 {
@@ -505,7 +504,7 @@
             }
 
             .hero h1 {
-                font-size: 32px
+                font-size: 30px
             }
 
             .hero {
@@ -540,32 +539,31 @@
     <div class="hero">
         <div class="wrap">
             <p class="breadcrumb"><a href="#">Accueil</a> / Professionnels / Quincailleries &amp; distributeurs</p>
-            <h1>Manufacturier et importateur : les tendances finition bois qui font vendre vos rayons</h1>
-            <p>Moulures, revêtements de murs et de plafonds, composantes de portes, d'escaliers et de fenêtres. Nous
-                détectons les tendances du marché pour vous proposer des produits innovants, de qualité et dans l'air du
-                temps.</p>
+            <h1>Manufacturier et distributeur de produits de finition bois pour le marché québécois</h1>
+            <p>Moulures, revêtements de murs et de plafonds, composantes de portes, d'escaliers et de fenêtres.
+                Interbois fabrique et importe, et assure une veille des tendances du marché pour soutenir l'offre de vos
+                magasins.</p>
             <div class="hero-actions">
                 <a href="#devis" class="btn btn-blanc">Devenir distributeur</a>
-                <a href="#" class="btn btn-outline">Voir nos présentoirs</a>
+                <a href="#" class="btn btn-outline">Consulter la documentation</a>
             </div>
             <div class="confiance">
-                <span>🏭 Manufacturier &amp; importateur</span>
-                <span>📈 Veille de tendances</span>
-                <span>🛒 Marchandisage en point de vente</span>
+                <span><span class="coche">✓</span> Fabrication et importation</span>
+                <span><span class="coche">✓</span> Veille de tendances</span>
+                <span><span class="coche">✓</span> Marchandisage en point de vente</span>
             </div>
         </div>
     </div>
 
     <!-- ============ BANDE ============ -->
-    <div class="bande">📈 Les tendances finition bois, <em>détectées pour vous</em> — vos rayons toujours à leur
-        meilleur.</div>
+    <div class="bande">Nos représentants assurent le marchandisage et l'approvisionnement de vos points de vente, en
+        anticipant vos besoins.</div>
 
-    <!-- ============ GALERIE PRÉSENTOIRS & MAGASINS ============ -->
+    <!-- ============ GALERIE MARCHANDISAGE ============ -->
     <section>
         <div class="wrap">
-            <h2>Nos présentoirs en magasin</h2>
-            <p class="sous-titre">Des présentoirs qui attirent l'œil, augmentent le panier moyen et rendent le rayon
-                finition bois plus rentable.</p>
+            <h2>Marchandisage et présentation en magasin</h2>
+            <p class="sous-titre">Présentoirs et aménagement de rayons réalisés par notre équipe.</p>
             <div class="galerie">
                 <div class="img"
                     style="background-image:url('https://placehold.co/900x700/8a6f52/fff?text=Presentoir+moulures')">
@@ -581,11 +579,11 @@
                 </div>
                 <div class="img"
                     style="background-image:url('https://placehold.co/900x400/6b5a4a/fff?text=Marchandisage+magasin')">
-                    <figcaption>Marchandisage réalisé par notre représentant</figcaption>
+                    <figcaption>Marchandisage réalisé par notre équipe</figcaption>
                 </div>
                 <div class="img"
                     style="background-image:url('https://placehold.co/600x400/d8b48f/fff?text=Nouveautes+tendances')">
-                    <figcaption>Nouveautés et produits tendance</figcaption>
+                    <figcaption>Nouveautés et produits actuels</figcaption>
                 </div>
             </div>
         </div>
@@ -598,35 +596,58 @@
                 style="background-image:url('https://placehold.co/800x900/1f4a37/fff?text=Representant+Interbois+en+magasin')">
             </div>
             <div>
-                <h2>Pourquoi devenir distributeur</h2>
-                <p class="sous-titre">Un partenaire qui fait tourner votre rayon, pas juste livrer des boîtes.</p>
+                <h2>Un partenaire pour votre rayon de finition bois</h2>
+                <p class="sous-titre">Fabrication, importation, veille de tendances et marchandisage.</p>
                 <ul class="points">
-                    <li><span class="ico">🏭</span>
+                    <li>
+                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16" />
+                                <path d="M12 21V9h5a1 1 0 0 1 1 1v11" />
+                                <path d="M2 21h20" />
+                                <path d="M7 8h2M7 12h2M7 16h2" />
+                            </svg></span>
                         <div>
-                            <h3>Manufacturier &amp; importateur</h3>
-                            <p>Nous fabriquons et distribuons des produits d'importation : une offre complète de
-                                finition bois sous un même toit.</p>
+                            <h3>Fabrication et importation</h3>
+                            <p>Interbois fabrique et distribue des produits d'importation, ce qui permet une offre de
+                                finition bois complète et coordonnée.</p>
                         </div>
                     </li>
-                    <li><span class="ico">📈</span>
+                    <li>
+                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 17l6-6 4 4 7-7" />
+                                <path d="M15 8h5v5" />
+                            </svg></span>
                         <div>
                             <h3>Veille de tendances</h3>
-                            <p>Détecter les tendances fait partie de notre mission : nous vous apportons les nouveautés
-                                du marché pour proposer des produits innovants, de qualité et dans l'air du temps.</p>
+                            <p>La détection des tendances fait partie de notre mandat : nous identifions et acheminons
+                                vers vos magasins les produits innovants et actuels.</p>
                         </div>
                     </li>
-                    <li><span class="ico">🛒</span>
+                    <li>
+                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <circle cx="9" cy="20" r="1.6" />
+                                <circle cx="17" cy="20" r="1.6" />
+                                <path d="M3 3h2l2.5 12h10l2-7H7" />
+                            </svg></span>
                         <div>
-                            <h3>Service &amp; marchandisage</h3>
-                            <p>Nos représentants s'occupent du marchandisage, gèrent l'inventaire et anticipent vos
-                                besoins pour que vos rayons soient toujours à leur meilleur.</p>
+                            <h3>Service et marchandisage</h3>
+                            <p>Nos représentants assurent le marchandisage de vos points de vente, gèrent l'inventaire
+                                et anticipent vos besoins afin de maintenir des rayons à jour.</p>
                         </div>
                     </li>
-                    <li><span class="ico">🤝</span>
+                    <li>
+                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <rect x="5" y="3" width="14" height="18" rx="2" />
+                                <path d="M9 8h6M9 12h6M9 16h4" />
+                            </svg></span>
                         <div>
-                            <h3>Conditions avantageuses</h3>
-                            <p>Nous savons répondre aux besoins spéciaux de vos clients et vous offrons les meilleures
-                                conditions pour satisfaire votre clientèle professionnelle.</p>
+                            <h3>Conditions</h3>
+                            <p>Nous répondons aux besoins particuliers de votre clientèle et proposons des conditions
+                                adaptées à votre clientèle professionnelle.</p>
                         </div>
                     </li>
                 </ul>
@@ -634,54 +655,53 @@
         </div>
     </section>
 
-    <!-- ============ GAMMES PHARES ============ -->
+    <!-- ============ GAMMES ============ -->
     <section>
         <div class="wrap">
             <h2>Notre offre de finition bois</h2>
-            <p class="sous-titre">Des produits qui se vendent seuls — prouvés dans 200+ points de vente.</p>
+            <p class="sous-titre">Une offre complète, fabriquée et importée, disponible pour vos rayons.</p>
             <div class="produits">
                 <div class="produit">
                     <div class="img"
                         style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Moulures')"></div>
                     <div class="corps">
-                        <h3>Moulures &amp; accessoires</h3>
-                        <p>Plinthes, cadrages et profils — la gamme de base qui tourne.</p><a href="#">Voir la gamme
-                            →</a>
+                        <h3>Moulures et accessoires</h3>
+                        <p>Plinthes, cadrages et profils pour la finition intérieure.</p><a href="#">Voir la gamme →</a>
                     </div>
                 </div>
                 <div class="produit">
                     <div class="img"
                         style="background-image:url('https://placehold.co/600x400/8a6f52/fff?text=Revetements')"></div>
                     <div class="corps">
-                        <h3>Revêtements murs &amp; plafonds</h3>
-                        <p>Lambris, shiplap et panneaux tendance — forte demande DIY.</p><a href="#">Voir la gamme →</a>
+                        <h3>Revêtements de murs et de plafonds</h3>
+                        <p>Lambris, shiplap et panneaux.</p><a href="#">Voir la gamme →</a>
                     </div>
                 </div>
                 <div class="produit">
                     <div class="img"
                         style="background-image:url('https://placehold.co/600x400/6b5a4a/fff?text=Composantes')"></div>
                     <div class="corps">
-                        <h3>Composantes portes, escaliers &amp; fenêtres</h3>
-                        <p>Jambages et profils — l'achat complémentaire des professionnels.</p><a href="#">Voir la gamme
-                            →</a>
+                        <h3>Composantes de portes, d'escaliers et de fenêtres</h3>
+                        <p>Jambages et profils pour les professionnels.</p><a href="#">Voir la gamme →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ RESSOURCES DISTRIBUTEUR ============ -->
+    <!-- ============ RESSOURCES ============ -->
     <section class="section-grise">
         <div class="wrap">
             <h2>Espace distributeur</h2>
-            <p class="sous-titre">Tout pour démarrer et vendre, en un clic.</p>
+            <p class="sous-titre">Documentation et programme à destination des quincailleries et magasins spécialisés.
+            </p>
             <div class="ressources">
                 <div class="ressource">
                     <div class="img"
                         style="background-image:url('https://placehold.co/600x300/2e6b4f/fff?text=Kit+presentoir')">
                     </div>
                     <div class="corps"><span class="type">Programme</span>
-                        <h3>Kit distributeur &amp; présentoirs</h3>
+                        <h3>Kit distributeur et présentoirs</h3>
                         <p>Modules, plan d'implantation et matériel de marchandisage.</p><a href="#">Télécharger →</a>
                     </div>
                 </div>
@@ -690,7 +710,7 @@
                         style="background-image:url('https://placehold.co/600x300/1f4a37/fff?text=Catalogue')"></div>
                     <div class="corps"><span class="type">Catalogue</span>
                         <h3>Gamme complète 2025</h3>
-                        <p>Le catalogue produit en PDF, à jour.</p><a href="#">Télécharger →</a>
+                        <p>Le catalogue produit en format PDF, à jour.</p><a href="#">Télécharger →</a>
                     </div>
                 </div>
                 <div class="ressource">
@@ -698,7 +718,7 @@
                         style="background-image:url('https://placehold.co/600x300/b98a5e/fff?text=Tarifs')"></div>
                     <div class="corps"><span class="type">Accès réservé</span>
                         <h3>Conditions distributeur</h3>
-                        <p>Tarifs et conditions avantageuses — sur demande, après vérification.</p><a href="#">Demander
+                        <p>Tarifs et conditions adaptés — sur demande, après vérification.</p><a href="#">Demander
                             l'accès →</a>
                     </div>
                 </div>
@@ -730,10 +750,9 @@
                     <input type="email" placeholder="Courriel" required>
                 </div>
                 <label>Votre besoin</label>
-                <textarea placeholder="Présentoir, tendances, conditions, marchandisage…"></textarea>
+                <textarea placeholder="Présentoirs, veille de tendances, conditions, marchandisage…"></textarea>
                 <button type="submit" class="btn-envoyer">Envoyer ma demande</button>
-                <p style="font-size:12px;color:var(--gris);margin-top:10px">Zéro engagement — conditions distributeur
-                    incluses.</p>
+                <p style="font-size:12px;color:var(--gris);margin-top:10px">Sans engagement.</p>
             </form>
         </div>
     </section>
@@ -741,14 +760,14 @@
     <!-- ============ TÉMOIGNAGES ============ -->
     <section class="section-grise">
         <div class="wrap">
-            <h2>Ils nous font confiance</h2>
+            <h2>Références</h2>
             <div class="temoignages">
-                <div class="temoignage">« Le marchandisage de leur représentant a transformé notre rayon : toujours
-                    rempli, toujours à jour. »<strong>— Quincaillerie, Saguenay</strong></div>
-                <div class="temoignage">« Ils nous apportent les tendances avant tout le monde. Nos clients reviennent
-                    pour les nouveautés. »<strong>— Magasin spécialisé, Québec</strong></div>
-                <div class="temoignage">« Des conditions qui nous permettent de bien servir notre clientèle
-                    professionnelle. »<strong>— Quincaillerie, Montérégie</strong></div>
+                <div class="temoignage">« Le marchandisage de nos points de vente est assuré par leur équipe ; nos
+                    rayons sont constamment à jour. »<strong>— Quincaillerie, Saguenay</strong></div>
+                <div class="temoignage">« Leur veille de tendances nous permet de présenter des produits actuels.
+                    »<strong>— Magasin spécialisé, Québec</strong></div>
+                <div class="temoignage">« Des conditions adaptées à notre clientèle professionnelle. »<strong>—
+                        Quincaillerie, Montérégie</strong></div>
             </div>
         </div>
     </section>

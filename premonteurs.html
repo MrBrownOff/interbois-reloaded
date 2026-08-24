@@ -39,14 +39,12 @@
             text-decoration: none
         }
 
-        /* Placeholder visuel : remplacez l'URL par vos vraies photos */
         .img {
             background-size: cover;
             background-position: center;
             background-color: #d8d2c6
         }
 
-        /* ---------- Navigation (transparente sur le héro) ---------- */
         header {
             position: absolute;
             top: 0;
@@ -99,13 +97,12 @@
             opacity: 1
         }
 
-        /* ---------- Héro plein écran ---------- */
         .hero {
             position: relative;
             min-height: 88vh;
             display: flex;
             align-items: center;
-            background-image: linear-gradient(rgba(20, 40, 32, .55), rgba(20, 40, 32, .75)), url('https://placehold.co/1600x900/2e6b4f/fff?text=Bati+de+porte+sur+chantier');
+            background-image: linear-gradient(rgba(20, 40, 32, .55), rgba(20, 40, 32, .75)), url('https://placehold.co/1600x900/2e6b4f/fff?text=Batis+de+porte+sur+chantier');
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -123,15 +120,15 @@
         }
 
         .hero h1 {
-            font-size: 44px;
+            font-size: 42px;
             line-height: 1.15;
-            max-width: 700px;
+            max-width: 720px;
             margin-bottom: 18px
         }
 
         .hero p {
             font-size: 18px;
-            max-width: 560px;
+            max-width: 600px;
             opacity: .95
         }
 
@@ -175,29 +172,26 @@
             gap: 8px
         }
 
-        /* ---------- Bande livraison ---------- */
+        .hero .confiance .coche {
+            color: var(--bois);
+            font-weight: 700
+        }
+
         .bande {
             background: var(--bois);
             color: #fff;
             text-align: center;
             padding: 20px;
-            font-size: 20px;
-            font-weight: 700
+            font-size: 17px;
+            font-weight: 600
         }
 
-        .bande em {
-            font-style: normal;
-            text-decoration: underline;
-            text-underline-offset: 4px
-        }
-
-        /* ---------- Sections ---------- */
         section {
             padding: 70px 0
         }
 
         h2 {
-            font-size: 31px;
+            font-size: 30px;
             margin-bottom: 10px
         }
 
@@ -212,7 +206,6 @@
             background: var(--gris-clair)
         }
 
-        /* ---------- Galerie photos ---------- */
         .galerie {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -247,7 +240,6 @@
             background: linear-gradient(transparent, rgba(0, 0, 0, .7))
         }
 
-        /* ---------- Pourquoi choisir : split image + points ---------- */
         .split {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -273,10 +265,10 @@
             height: 52px;
             border-radius: 50%;
             background: var(--gris-clair);
+            color: var(--vert);
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 24px
+            justify-content: center
         }
 
         .points h3 {
@@ -290,7 +282,6 @@
             color: var(--gris)
         }
 
-        /* ---------- Produits : grandes cartes image ---------- */
         .produits {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -339,7 +330,6 @@
             text-decoration: underline
         }
 
-        /* ---------- Ressources ---------- */
         .ressources {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -391,7 +381,6 @@
             margin-top: auto
         }
 
-        /* ---------- Formulaire ---------- */
         .formulaire {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -457,7 +446,6 @@
             background: var(--vert-fonce)
         }
 
-        /* ---------- Témoignages ---------- */
         .temoignages {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -516,7 +504,7 @@
             }
 
             .hero h1 {
-                font-size: 32px
+                font-size: 30px
             }
 
             .hero {
@@ -547,34 +535,36 @@
         </nav>
     </header>
 
-    <!-- ============ HÉRO PLEIN ÉCRAN ============ -->
+    <!-- ============ HÉRO ============ -->
     <div class="hero">
         <div class="wrap">
             <p class="breadcrumb"><a href="#">Accueil</a> / Professionnels / Prémonteurs &amp; fabricants de portes et
                 fenêtres</p>
-            <h1>Tous vos bâtis de portes, à façon — livrés sur votre chantier</h1>
-            <p>Interbois produit tous vos bâtis de portes aux dimensions exactes de vos cadres. Notre plus : on livre
-                sur les chantiers, au moment où il faut, quand vous en avez besoin.</p>
+            <h1>Bâtis de portes à façon — précision, constance et livraison coordonnée avec vos chantiers</h1>
+            <p>Interbois fabrique les bâtis de portes à la dimension exacte de vos cadres, en MDF et en bois. Nos
+                livraisons sont planifiées avec votre calendrier de production et acheminées directement sur les
+                chantiers, au moment convenu.</p>
             <div class="hero-actions">
                 <a href="#devis" class="btn btn-blanc">Demander une soumission</a>
-                <a href="#" class="btn btn-outline">Voir nos réalisations</a>
+                <a href="#" class="btn btn-outline">Consulter la documentation technique</a>
             </div>
             <div class="confiance">
-                <span>🏭 Nouvelle usine &amp; centre de distribution 2026</span>
-                <span>📅 30 ans d'expérience</span>
-                <span>🚚 Livraison chantier</span>
+                <span><span class="coche">✓</span> Fabrication à façon</span>
+                <span><span class="coche">✓</span> 30 ans d'expérience</span>
+                <span><span class="coche">✓</span> Usine et centre de distribution (2026)</span>
             </div>
         </div>
     </div>
 
-    <!-- ============ BANDE LIVRAISON ============ -->
-    <div class="bande">🚚 On livre sur les chantiers, <em>au moment où il faut</em>, quand vous en avez besoin.</div>
+    <!-- ============ BANDE ============ -->
+    <div class="bande">Nos livraisons sont coordonnées avec votre calendrier et acheminées directement sur vos
+        chantiers, au moment où vous en avez besoin.</div>
 
     <!-- ============ GALERIE RÉALISATIONS ============ -->
     <section>
         <div class="wrap">
-            <h2>Nos réalisations en images</h2>
-            <p class="sous-titre">Des bâtis installés, des chantiers livrés à temps, une usine qui tourne.</p>
+            <h2>Réalisations</h2>
+            <p class="sous-titre">Exemples de bâtis installés et d'installations de production.</p>
             <div class="galerie">
                 <div class="img"
                     style="background-image:url('https://placehold.co/900x700/8a6f52/fff?text=Batis+installes')">
@@ -582,52 +572,69 @@
                 </div>
                 <div class="img"
                     style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Pose+sur+chantier')">
-                    <figcaption>Livraison et pose sur chantier</figcaption>
+                    <figcaption>Livraison coordonnée sur chantier</figcaption>
                 </div>
                 <div class="img"
                     style="background-image:url('https://placehold.co/600x400/2e6b4f/fff?text=Usine+2026')">
-                    <figcaption>Notre nouvelle usine (2026)</figcaption>
+                    <figcaption>Usine de Saint-Odilon-de-Cranbourne</figcaption>
                 </div>
                 <div class="img"
                     style="background-image:url('https://placehold.co/900x400/6b5a4a/fff?text=Centre+de+distribution')">
-                    <figcaption>Centre de distribution</figcaption>
+                    <figcaption>Centre de distribution (2026)</figcaption>
                 </div>
                 <div class="img" style="background-image:url('https://placehold.co/600x400/d8b48f/fff?text=Finitions')">
-                    <figcaption>Finitions et profils</figcaption>
+                    <figcaption>Profils et finitions</figcaption>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ POURQUOI CHOISIR : SPLIT ============ -->
+    <!-- ============ POURQUOI CHOISIR INTERBOIS ============ -->
     <section class="section-grise">
         <div class="wrap split">
             <div class="img"
                 style="background-image:url('https://placehold.co/800x900/1f4a37/fff?text=Usine+Interbois+Beauce')">
             </div>
             <div>
-                <h2>Pourquoi choisir Interbois</h2>
-                <p class="sous-titre">Un partenaire de fabrication établi, équipé pour grandir avec vous.</p>
+                <h2>Un partenaire de fabrication établi</h2>
+                <p class="sous-titre">Capacités, expérience et constance au service de votre production.</p>
                 <ul class="points">
-                    <li><span class="ico">🤝</span>
+                    <li>
+                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <rect x="2" y="9" width="20" height="6" rx="1" />
+                                <path d="M6 9v3M10 9v3M14 9v3M18 9v3" />
+                            </svg></span>
                         <div>
                             <h3>Professionnalisme</h3>
-                            <p>Service dédié, engagements respectés, constance de qualité lot après lot — de la
-                                soumission à la livraison.</p>
+                            <p>Un interlocuteur dédié, des engagements documentés et une qualité constante d'une
+                                commande à l'autre, de la soumission à la livraison.</p>
                         </div>
                     </li>
-                    <li><span class="ico">🏭</span>
+                    <li>
+                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16" />
+                                <path d="M12 21V9h5a1 1 0 0 1 1 1v11" />
+                                <path d="M2 21h20" />
+                                <path d="M7 8h2M7 12h2M7 16h2" />
+                            </svg></span>
                         <div>
-                            <h3>Nos moyens</h3>
-                            <p>Nouvelle usine et nouveau centre de distribution en 2026 : plus de capacité, plus de
-                                stock, des délais encore plus fiables.</p>
+                            <h3>Capacité</h3>
+                            <p>Une nouvelle usine et un nouveau centre de distribution, prévus en 2026, accroîtront
+                                notre capacité de production et la fiabilité de nos délais.</p>
                         </div>
                     </li>
-                    <li><span class="ico">📅</span>
+                    <li>
+                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 7v5l3 3" />
+                            </svg></span>
                         <div>
-                            <h3>30 ans d'expérience</h3>
-                            <p>Trois décennies aux côtés des prémonteurs et fabricants de portes et fenêtres du Québec.
-                            </p>
+                            <h3>Expérience</h3>
+                            <p>Trente ans d'expérience auprès des prémonteurs et fabricants de portes et fenêtres du
+                                Québec.</p>
                         </div>
                     </li>
                 </ul>
@@ -635,11 +642,11 @@
         </div>
     </section>
 
-    <!-- ============ PRODUITS ============ -->
+    <!-- ============ GAMMES ============ -->
     <section>
         <div class="wrap">
-            <h2>Nos composantes pour vos cadres</h2>
-            <p class="sous-titre">Toute la gamme, en volume et à façon.</p>
+            <h2>Nos gammes pour vos cadres</h2>
+            <p class="sous-titre">Une offre de composantes disponible en volume et à façon.</p>
             <div class="produits">
                 <div class="produit">
                     <div class="img"
@@ -647,7 +654,8 @@
                     </div>
                     <div class="corps">
                         <h3>Bâtis de portes à façon</h3>
-                        <p>Jambages, têtes et arrêts aux dimensions de vos cadres.</p><a href="#">Voir la fiche →</a>
+                        <p>Jambages, têtes et arrêts fabriqués aux dimensions de vos cadres.</p><a href="#">Voir la
+                            gamme →</a>
                     </div>
                 </div>
                 <div class="produit">
@@ -655,8 +663,8 @@
                         style="background-image:url('https://placehold.co/600x400/8a6f52/fff?text=Composantes+fenetres')">
                     </div>
                     <div class="corps">
-                        <h3>Composantes fenêtres</h3>
-                        <p>Jambages et profils assortis à vos séries.</p><a href="#">Voir la fiche →</a>
+                        <h3>Composantes de fenêtres</h3>
+                        <p>Profils et jambages assortis à vos séries de fenêtres.</p><a href="#">Voir la gamme →</a>
                     </div>
                 </div>
                 <div class="produit">
@@ -664,8 +672,8 @@
                         style="background-image:url('https://placehold.co/600x400/6b5a4a/fff?text=Moulures+profils')">
                     </div>
                     <div class="corps">
-                        <h3>Moulures &amp; profils</h3>
-                        <p>Gamme complète pour finition intérieure.</p><a href="#">Voir la fiche →</a>
+                        <h3>Moulures et profils</h3>
+                        <p>Gamme complète pour la finition intérieure.</p><a href="#">Voir la gamme →</a>
                     </div>
                 </div>
             </div>
@@ -676,22 +684,22 @@
     <section class="section-grise">
         <div class="wrap">
             <h2>Ressources techniques</h2>
-            <p class="sous-titre">Tout ce dont votre équipe a besoin, en un clic.</p>
+            <p class="sous-titre">Documentation à destination de vos équipes d'ingénierie et de production.</p>
             <div class="ressources">
                 <div class="ressource">
                     <div class="img" style="background-image:url('https://placehold.co/600x300/2e6b4f/fff?text=DWG')">
                     </div>
                     <div class="corps"><span class="type">Fichiers CAO</span>
                         <h3>Bibliothèque DWG/DXF</h3>
-                        <p>Profils prêts à insérer dans vos plans.</p><a href="#">Télécharger →</a>
+                        <p>Profils et composantes prêts à insérer dans vos plans.</p><a href="#">Télécharger →</a>
                     </div>
                 </div>
                 <div class="ressource">
                     <div class="img" style="background-image:url('https://placehold.co/600x300/1f4a37/fff?text=Specs')">
                     </div>
                     <div class="corps"><span class="type">Guide technique</span>
-                        <h3>Spécifications &amp; tolérances</h3>
-                        <p>Essences, grades, finitions et normes.</p><a href="#">Télécharger →</a>
+                        <h3>Spécifications et tolérances</h3>
+                        <p>Essences, grades, finitions et normes de fabrication.</p><a href="#">Télécharger →</a>
                     </div>
                 </div>
                 <div class="ressource">
@@ -699,7 +707,7 @@
                         style="background-image:url('https://placehold.co/600x300/b98a5e/fff?text=Catalogue')"></div>
                     <div class="corps"><span class="type">Catalogue</span>
                         <h3>Gamme complète 2025</h3>
-                        <p>Le catalogue produit en PDF, à jour.</p><a href="#">Télécharger →</a>
+                        <p>Le catalogue produit en format PDF, à jour.</p><a href="#">Télécharger →</a>
                     </div>
                 </div>
             </div>
@@ -711,7 +719,7 @@
         <div class="wrap formulaire">
             <div class="img"></div>
             <form>
-                <h3>Demandez une soumission</h3>
+                <h3>Demande de soumission</h3>
                 <p style="font-size:14px;color:var(--gris);margin-bottom:10px">Réponse sous 48 h ouvrées par un
                     conseiller dédié.</p>
                 <label>Entreprise *</label><input type="text" placeholder="Nom de l'entreprise" required>
@@ -729,9 +737,9 @@
                     <input type="email" placeholder="Courriel" required>
                 </div>
                 <label>Votre besoin</label>
-                <textarea placeholder="Décrivez vos produits, volumes, échéancier, chantiers…"></textarea>
+                <textarea placeholder="Produits concernés, volumes estimés, échéancier…"></textarea>
                 <button type="submit" class="btn-envoyer">Envoyer ma demande</button>
-                <p style="font-size:12px;color:var(--gris);margin-top:10px">Zéro engagement — prix de volume inclus.</p>
+                <p style="font-size:12px;color:var(--gris);margin-top:10px">Sans engagement.</p>
             </form>
         </div>
     </section>
@@ -739,14 +747,14 @@
     <!-- ============ TÉMOIGNAGES ============ -->
     <section class="section-grise">
         <div class="wrap">
-            <h2>Ils nous font confiance</h2>
+            <h2>Références</h2>
             <div class="temoignages">
-                <div class="temoignage">« Des bâtis à la dimension exacte de nos cadres, lot après lot. Un vrai
-                    partenaire de production. »<strong>— Fabricant de portes, Québec</strong></div>
-                <div class="temoignage">« Livrés sur le chantier au moment promis. Ça change toute notre planification.
-                    »<strong>— Entrepreneur général, Montérégie</strong></div>
-                <div class="temoignage">« Trente ans de métier, ça paraît : ils comprennent nos délais et nos
-                    contraintes. »<strong>— Prémonteur, Saguenay</strong></div>
+                <div class="temoignage">« Des bâtis fabriqués aux dimensions exactes de nos cadres, avec une qualité
+                    constante. »<strong>— Fabricant de portes, Québec</strong></div>
+                <div class="temoignage">« Les livraisons sont coordonnées avec notre calendrier ; la planification en
+                    est simplifiée. »<strong>— Prémonteur, Montérégie</strong></div>
+                <div class="temoignage">« Une connaissance du métier qui facilite la collaboration. »<strong>— Fabricant
+                        de fenêtres, Saguenay</strong></div>
             </div>
         </div>
     </section>
