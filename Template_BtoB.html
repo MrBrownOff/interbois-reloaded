@@ -35,7 +35,6 @@
             padding: 0 20px
         }
 
-        /* ---------- Navigation ---------- */
         header {
             background: var(--blanc);
             border-bottom: 1px solid var(--bord);
@@ -84,7 +83,6 @@
             border-radius: 4px
         }
 
-        /* ---------- Héro ---------- */
         .hero {
             background: linear-gradient(120deg, var(--vert-fonce), var(--vert));
             color: #fff;
@@ -94,13 +92,13 @@
         .hero h1 {
             font-size: 36px;
             margin-bottom: 14px;
-            max-width: 640px
+            max-width: 680px
         }
 
         .hero p {
             font-size: 17px;
-            max-width: 560px;
-            opacity: .92
+            max-width: 600px;
+            opacity: .95
         }
 
         .hero-actions {
@@ -140,7 +138,23 @@
             text-decoration: none
         }
 
-        /* ---------- Sections génériques ---------- */
+        /* Bande "gros +" : livraison chantier */
+        .bande {
+            background: var(--bois);
+            color: #fff;
+            text-align: center;
+            padding: 18px 20px;
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: .3px
+        }
+
+        .bande em {
+            font-style: normal;
+            text-decoration: underline;
+            text-underline-offset: 4px
+        }
+
         section {
             padding: 56px 0
         }
@@ -160,8 +174,7 @@
             background: var(--gris-clair)
         }
 
-        /* ---------- Bénéfices ---------- */
-        .benefices {
+        .cartes {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 22px
@@ -190,7 +203,6 @@
             color: var(--gris)
         }
 
-        /* ---------- Produits ---------- */
         .produits {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -244,51 +256,6 @@
             text-decoration: underline
         }
 
-        /* ---------- Étapes ---------- */
-        .etapes {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            counter-reset: etape
-        }
-
-        .etape {
-            background: #fff;
-            border: 1px solid var(--bord);
-            border-radius: 8px;
-            padding: 22px;
-            position: relative
-        }
-
-        .etape::before {
-            counter-increment: etape;
-            content: counter(etape);
-            position: absolute;
-            top: -14px;
-            left: 18px;
-            background: var(--vert);
-            color: #fff;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px
-        }
-
-        .etape h3 {
-            font-size: 15px;
-            margin: 8px 0 6px
-        }
-
-        .etape p {
-            font-size: 13px;
-            color: var(--gris)
-        }
-
-        /* ---------- Ressources ---------- */
         .ressources {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -330,7 +297,6 @@
             margin-top: auto
         }
 
-        /* ---------- Formulaire ---------- */
         .formulaire {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -401,7 +367,6 @@
             background: var(--vert-fonce)
         }
 
-        /* ---------- Témoignages ---------- */
         .temoignages {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -442,11 +407,10 @@
 
         @media(max-width:800px) {
 
-            .benefices,
+            .cartes,
             .produits,
             .ressources,
             .temoignages,
-            .etapes,
             .formulaire {
                 grid-template-columns: 1fr
             }
@@ -483,37 +447,43 @@
         <div class="wrap">
             <p class="breadcrumb"><a href="#">Accueil</a> / Professionnels / Prémonteurs &amp; fabricants de portes et
                 fenêtres</p>
-            <h1>Composantes de portes et fenêtres fabriquées sur mesure, au Québec</h1>
-            <p>Jambages, bâtis, arrêts et têtes aux dimensions exactes de vos cadres — constance de qualité lot après
-                lot, livraison fiable et tarifs de volume.</p>
+            <h1>Tous vos bâtis de portes, à façon — et livrés sur votre chantier</h1>
+            <p>Interbois peut produire tous vos bâtis de portes à façon : jambages, têtes, arrêts, aux dimensions
+                exactes de vos cadres. Notre plus : nous livrons sur les chantiers, au moment où il faut, quand vous en
+                avez besoin.</p>
             <div class="hero-actions">
                 <a href="#devis" class="btn btn-blanc">Demander une soumission</a>
-                <a href="#" class="btn btn-outline">Télécharger notre catalogue technique</a>
+                <a href="#" class="btn btn-outline">Télécharger le catalogue technique</a>
             </div>
         </div>
     </div>
 
-    <!-- ============ BÉNÉFICES ============ -->
+    <!-- ============ GROS + : LIVRAISON CHANTIER ============ -->
+    <div class="bande">🚚 On livre sur les chantiers, <em>au moment où il faut</em>, quand vous en avez besoin.</div>
+
+    <!-- ============ POURQUOI CHOISIR INTERBOIS ============ -->
     <section>
         <div class="wrap">
             <h2>Pourquoi choisir Interbois</h2>
-            <p class="sous-titre">Un partenaire de fabrication, pas seulement un fournisseur.</p>
-            <div class="benefices">
+            <p class="sous-titre">Un partenaire de fabrication établi, équipé pour grandir avec vous.</p>
+            <div class="cartes">
                 <div class="carte">
-                    <div class="ico">📐</div>
-                    <h3>Sur-mesure &amp; constance</h3>
-                    <p>Profils et dimensions conformes à vos cadres, tolérances serrées, qualité identique d'une
-                        commande à l'autre.</p>
+                    <div class="ico">🤝</div>
+                    <h3>Professionnalisme</h3>
+                    <p>Un service dédié, des engagements respectés et une constance de qualité lot après lot — de la
+                        soumission à la livraison.</p>
                 </div>
                 <div class="carte">
-                    <div class="ico">🚚</div>
-                    <h3>Logistique fiable</h3>
-                    <p>Production et livraison planifiées selon votre cadence, au Québec et dans l'Est du Canada.</p>
+                    <div class="ico">🏭</div>
+                    <h3>Nos moyens</h3>
+                    <p>Une nouvelle usine et un nouveau centre de distribution en 2026 : plus de capacité, plus de
+                        stock, des délais encore plus fiables.</p>
                 </div>
                 <div class="carte">
-                    <div class="ico">💰</div>
-                    <h3>Tarifs de volume</h3>
-                    <p>Prix dégressifs selon les quantités, entente annuelle et compte professionnel dédié.</p>
+                    <div class="ico">📅</div>
+                    <h3>30 ans d'expérience</h3>
+                    <p>Trois décennies à travailler aux côtés des prémonteurs et fabricants de portes et fenêtres du
+                        Québec. On connaît votre métier.</p>
                 </div>
             </div>
         </div>
@@ -523,13 +493,14 @@
     <section class="section-grise">
         <div class="wrap">
             <h2>Nos composantes pour vos cadres</h2>
-            <p class="sous-titre">Toute la gamme, disponible en volume.</p>
+            <p class="sous-titre">Toute la gamme, en volume et à façon.</p>
             <div class="produits">
                 <div class="produit">
                     <div class="visuel"></div>
                     <div class="corps">
-                        <h3>Jambages &amp; bâtis</h3>
-                        <p style="font-size:13px;color:var(--gris)">MDF et bois, dimensions personnalisées.</p>
+                        <h3>Bâtis de portes à façon</h3>
+                        <p style="font-size:13px;color:var(--gris)">Jambages, têtes et arrêts aux dimensions de vos
+                            cadres.</p>
                         <div class="tags"><span class="tag">Sur-mesure</span><span class="tag">Volume</span></div>
                         <a href="#">Voir la fiche →</a>
                     </div>
@@ -537,8 +508,8 @@
                 <div class="produit">
                     <div class="visuel"></div>
                     <div class="corps">
-                        <h3>Arrêts de porte &amp; têtes</h3>
-                        <p style="font-size:13px;color:var(--gris)">Profils assortis à toutes vos séries.</p>
+                        <h3>Composantes fenêtres</h3>
+                        <p style="font-size:13px;color:var(--gris)">Jambages et profils assortis à vos séries.</p>
                         <div class="tags"><span class="tag">MDF</span><span class="tag">Bois</span></div>
                         <a href="#">Voir la fiche →</a>
                     </div>
@@ -556,34 +527,8 @@
         </div>
     </section>
 
-    <!-- ============ PROCESSUS ============ -->
-    <section>
-        <div class="wrap">
-            <h2>Comment ça fonctionne</h2>
-            <p class="sous-titre">Un processus simple pour passer commande.</p>
-            <div class="etapes">
-                <div class="etape">
-                    <h3>1. Soumission</h3>
-                    <p>Envoyez vos plans ou dimensions via le formulaire.</p>
-                </div>
-                <div class="etape">
-                    <h3>2. Échantillons</h3>
-                    <p>Nous validons les profils et la finition ensemble.</p>
-                </div>
-                <div class="etape">
-                    <h3>3. Production</h3>
-                    <p>Fabrication à notre usine de la Beauce, selon votre calendrier.</p>
-                </div>
-                <div class="etape">
-                    <h3>4. Livraison</h3>
-                    <p>Expédition planifiée vers votre atelier ou votre chantier.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ============ RESSOURCES ============ -->
-    <section class="section-grise">
+    <section>
         <div class="wrap">
             <h2>Ressources techniques</h2>
             <p class="sous-titre">Tout ce dont votre équipe a besoin, en un clic.</p>
@@ -605,7 +550,7 @@
     </section>
 
     <!-- ============ FORMULAIRE ============ -->
-    <section id="devis">
+    <section id="devis" class="section-grise">
         <div class="wrap formulaire">
             <div>
                 <h2>Demandez une soumission</h2>
@@ -633,7 +578,7 @@
                     <input type="email" placeholder="Courriel" required>
                 </div>
                 <label>Votre besoin</label>
-                <textarea placeholder="Décrivez vos produits, volumes estimés, échéancier…"></textarea>
+                <textarea placeholder="Décrivez vos produits, volumes estimés, échéancier, chantiers…"></textarea>
                 <button type="submit" class="btn-envoyer">Envoyer ma demande</button>
                 <p style="font-size:12px;color:var(--gris);margin-top:10px">Zéro engagement — nous vous répondons avec
                     des prix de volume.</p>
@@ -646,12 +591,12 @@
         <div class="wrap">
             <h2>Ils nous font confiance</h2>
             <div class="temoignages">
-                <div class="temoignage">« Des composantes à la dimension exacte de nos cadres, lot après lot. Un vrai
+                <div class="temoignage">« Des bâtis à la dimension exacte de nos cadres, lot après lot. Un vrai
                     partenaire de production. »<strong>— Fabricant de portes, Québec</strong></div>
-                <div class="temoignage">« La logistique est impeccable : on planifie nos assemblages sans surprise.
-                    »<strong>— Prémonteur, Montérégie</strong></div>
-                <div class="temoignage">« Des tarifs de volume compétitifs et un service qui comprend notre métier.
-                    »<strong>— Quincaillerie, Saguenay</strong></div>
+                <div class="temoignage">« Livrés sur le chantier au moment promis. Ça change toute notre planification.
+                    »<strong>— Entrepreneur général, Montérégie</strong></div>
+                <div class="temoignage">« Trente ans de métier, ça paraît : ils comprennent nos délais et nos
+                    contraintes. »<strong>— Prémonteur, Saguenay</strong></div>
             </div>
         </div>
     </section>
