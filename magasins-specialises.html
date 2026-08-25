@@ -1,783 +1,292 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devenir partenaire — Interbois</title>
-    <style>
-        :root {
-            --vert: #2e6b4f;
-            --vert-fonce: #1f4a37;
-            --bois: #b98a5e;
-            --gris: #5a5a5a;
-            --gris-clair: #f4f1ec;
-            --blanc: #fff;
-            --noir: #222;
-            --bord: #e2dcd2;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            color: var(--noir);
-            line-height: 1.55
-        }
-
-        .wrap {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 20px
-        }
-
-        a {
-            text-decoration: none
-        }
-
-        .img {
-            background-size: cover;
-            background-position: center;
-            background-color: #d8d2c6
-        }
-
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
-            background: linear-gradient(rgba(0, 0, 0, .35), transparent)
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 70px
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 20px;
-            color: #fff
-        }
-
-        .logo span {
-            color: var(--bois)
-        }
-
-        nav ul {
-            display: flex;
-            gap: 26px;
-            list-style: none;
-            font-size: 14px
-        }
-
-        nav a {
-            color: #fff;
-            opacity: .92
-        }
-
-        nav a:hover {
-            opacity: 1;
-            text-decoration: underline
-        }
-
-        .cta-nav {
-            background: #fff;
-            color: var(--vert-fonce) !important;
-            padding: 9px 18px;
-            border-radius: 4px;
-            font-weight: 600;
-            opacity: 1
-        }
-
-        .hero {
-            position: relative;
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            background-image: linear-gradient(rgba(20, 40, 32, .55), rgba(20, 40, 32, .75)), url('https://placehold.co/1600x900/2e6b4f/fff?text=Rayon+finition+bois+en+boutique');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 120px 0 80px
-        }
-
-        .hero .breadcrumb {
-            font-size: 13px;
-            opacity: .85;
-            margin-bottom: 24px
-        }
-
-        .hero .breadcrumb a {
-            color: #fff
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            line-height: 1.15;
-            max-width: 720px;
-            margin-bottom: 18px
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            opacity: .95
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 14px;
-            margin-top: 32px;
-            flex-wrap: wrap
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 15px
-        }
-
-        .btn-blanc {
-            background: #fff;
-            color: var(--vert-fonce)
-        }
-
-        .btn-outline {
-            border: 2px solid #fff;
-            color: #fff
-        }
-
-        .hero .confiance {
-            display: flex;
-            gap: 26px;
-            margin-top: 46px;
-            flex-wrap: wrap;
-            font-size: 14px;
-            font-weight: 600
-        }
-
-        .hero .confiance span {
-            display: flex;
-            align-items: center;
-            gap: 8px
-        }
-
-        .hero .confiance .coche {
-            color: var(--bois);
-            font-weight: 700
-        }
-
-        .bande {
-            background: var(--bois);
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 17px;
-            font-weight: 600
-        }
-
-        section {
-            padding: 70px 0
-        }
-
-        h2 {
-            font-size: 30px;
-            margin-bottom: 10px
-        }
-
-        .sous-titre {
-            color: var(--gris);
-            margin-bottom: 36px;
-            max-width: 620px;
-            font-size: 16px
-        }
-
-        .section-grise {
-            background: var(--gris-clair)
-        }
-
-        .galerie {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 200px;
-            gap: 14px
-        }
-
-        .galerie .img {
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden
-        }
-
-        .galerie .img:nth-child(1) {
-            grid-column: span 2;
-            grid-row: span 2
-        }
-
-        .galerie .img:nth-child(4) {
-            grid-column: span 2
-        }
-
-        .galerie .img figcaption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 28px 14px 12px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #fff;
-            background: linear-gradient(transparent, rgba(0, 0, 0, .7))
-        }
-
-        .split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center
-        }
-
-        .split .img {
-            border-radius: 10px;
-            min-height: 420px;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, .15)
-        }
-
-        .points li {
-            list-style: none;
-            display: flex;
-            gap: 16px;
-            margin-bottom: 22px
-        }
-
-        .points .ico {
-            flex: 0 0 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: var(--gris-clair);
-            color: var(--vert);
-            display: flex;
-            align-items: center;
-            justify-content: center
-        }
-
-        .points h3 {
-            font-size: 17px;
-            color: var(--vert-fonce);
-            margin-bottom: 4px
-        }
-
-        .points p {
-            font-size: 14px;
-            color: var(--gris)
-        }
-
-        .produits {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px
-        }
-
-        .produit {
-            background: #fff;
-            border: 1px solid var(--bord);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform .25s, box-shadow .25s
-        }
-
-        .produit:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 14px 30px rgba(0, 0, 0, .12)
-        }
-
-        .produit .img {
-            height: 210px
-        }
-
-        .produit .corps {
-            padding: 20px
-        }
-
-        .produit h3 {
-            font-size: 17px;
-            margin-bottom: 6px
-        }
-
-        .produit p {
-            font-size: 13px;
-            color: var(--gris);
-            margin-bottom: 12px
-        }
-
-        .produit a {
-            color: var(--vert);
-            font-weight: 700;
-            font-size: 14px
-        }
-
-        .produit a:hover {
-            text-decoration: underline
-        }
-
-        .ressources {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px
-        }
-
-        .ressource {
-            background: #fff;
-            border: 1px solid var(--bord);
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column
-        }
-
-        .ressource .img {
-            height: 120px
-        }
-
-        .ressource .corps {
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            flex: 1
-        }
-
-        .ressource .type {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            color: var(--bois);
-            font-weight: 700
-        }
-
-        .ressource h3 {
-            font-size: 16px
-        }
-
-        .ressource p {
-            font-size: 13px;
-            color: var(--gris)
-        }
-
-        .ressource a {
-            color: var(--vert);
-            font-weight: 700;
-            font-size: 14px;
-            margin-top: auto
-        }
-
-        .formulaire {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 44px;
-            align-items: stretch
-        }
-
-        .formulaire .img {
-            border-radius: 10px;
-            min-height: 100%;
-            background-image: url('https://placehold.co/800x900/1f4a37/fff?text=Boutique+finition+bois');
-            background-size: cover
-        }
-
-        form {
-            background: #fff;
-            border: 1px solid var(--bord);
-            border-radius: 10px;
-            padding: 32px
-        }
-
-        form h3 {
-            margin-bottom: 16px
-        }
-
-        label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            margin: 12px 0 4px
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--bord);
-            border-radius: 6px;
-            font-size: 14px;
-            font-family: inherit
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 90px
-        }
-
-        .btn-envoyer {
-            background: var(--vert);
-            color: #fff;
-            border: none;
-            width: 100%;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 18px
-        }
-
-        .btn-envoyer:hover {
-            background: var(--vert-fonce)
-        }
-
-        .temoignages {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px
-        }
-
-        .temoignage {
-            background: #fff;
-            border: 1px solid var(--bord);
-            border-radius: 10px;
-            padding: 24px;
-            font-style: italic;
-            font-size: 14px;
-            color: var(--gris)
-        }
-
-        .temoignage strong {
-            display: block;
-            margin-top: 14px;
-            font-style: normal;
-            color: var(--noir);
-            font-size: 13px
-        }
-
-        footer {
-            background: var(--noir);
-            color: #ccc;
-            padding: 40px 0;
-            font-size: 13px
-        }
-
-        footer .wrap {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px
-        }
-
-        footer a {
-            color: #fff
-        }
-
-        @media(max-width:900px) {
-
-            .galerie,
-            .produits,
-            .ressources,
-            .temoignages,
-            .formulaire,
-            .split {
-                grid-template-columns: 1fr
-            }
-
-            nav ul {
-                display: none
-            }
-
-            .hero h1 {
-                font-size: 30px
-            }
-
-            .hero {
-                min-height: auto
-            }
-
-            .galerie .img:nth-child(1) {
-                grid-column: auto;
-                grid-row: auto
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devenir partenaire — Interbois</title>
+<style>
+  :root{
+    --vert:#2e6b4f; --vert-fonce:#1f4a37; --bois:#b98a5e;
+    --gris:#5a5a5a; --gris-clair:#f4f1ec; --blanc:#fff;
+    --noir:#222; --bord:#e2dcd2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Segoe UI",Arial,sans-serif;color:var(--noir);line-height:1.55}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  a{text-decoration:none}
+  .img{background-size:cover;background-position:center;background-color:#d8d2c6}
+
+  header{position:absolute;top:0;left:0;right:0;z-index:10;background:linear-gradient(rgba(0,0,0,.35),transparent)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-weight:700;font-size:20px;color:#fff}
+  .logo span{color:var(--bois)}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:14px}
+  nav a{color:#fff;opacity:.92}
+  nav a:hover{opacity:1;text-decoration:underline}
+  .cta-nav{background:#fff;color:var(--vert-fonce)!important;padding:9px 18px;border-radius:4px;font-weight:600;opacity:1}
+
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;
+    background-image:linear-gradient(rgba(20,40,32,.55),rgba(20,40,32,.75)),url('https://placehold.co/1600x900/2e6b4f/fff?text=Rayon+finition+bois+en+boutique');
+    background-size:cover;background-position:center;color:#fff;padding:120px 0 80px}
+  .hero .breadcrumb{font-size:13px;opacity:.85;margin-bottom:24px}
+  .hero .breadcrumb a{color:#fff}
+  .hero h1{font-size:42px;line-height:1.15;max-width:720px;margin-bottom:18px}
+  .hero p{font-size:18px;max-width:600px;opacity:.95}
+  .hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;border-radius:5px;font-weight:700;font-size:15px}
+  .btn-blanc{background:#fff;color:var(--vert-fonce)}
+  .btn-outline{border:2px solid #fff;color:#fff}
+  .hero .confiance{display:flex;gap:26px;margin-top:46px;flex-wrap:wrap;font-size:14px;font-weight:600}
+  .hero .confiance span{display:flex;align-items:center;gap:8px}
+  .hero .confiance .coche{color:var(--bois);font-weight:700}
+
+  .bande{background:var(--bois);color:#fff;text-align:center;padding:20px;font-size:17px;font-weight:600}
+
+  section{padding:70px 0}
+  h2{font-size:30px;margin-bottom:10px}
+  .sous-titre{color:var(--gris);margin-bottom:36px;max-width:620px;font-size:16px}
+  .section-grise{background:var(--gris-clair)}
+
+  .galerie{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+  .galerie .img{border-radius:8px;position:relative;overflow:hidden}
+  .galerie .img:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .galerie .img:nth-child(4){grid-column:span 2}
+  .galerie .img figcaption{position:absolute;bottom:0;left:0;right:0;padding:28px 14px 12px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .split .img{border-radius:10px;min-height:420px;box-shadow:0 18px 40px rgba(0,0,0,.15)}
+  .points li{list-style:none;display:flex;gap:16px;margin-bottom:22px}
+  .points .ico{flex:0 0 52px;height:52px;border-radius:50%;background:var(--gris-clair);color:var(--vert);display:flex;align-items:center;justify-content:center}
+  .points h3{font-size:17px;color:var(--vert-fonce);margin-bottom:4px}
+  .points p{font-size:14px;color:var(--gris)}
+
+  .produits{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .produit{background:#fff;border:1px solid var(--bord);border-radius:10px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+  .produit:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.12)}
+  .produit .img{height:210px}
+  .produit .corps{padding:20px}
+  .produit h3{font-size:17px;margin-bottom:6px}
+  .produit p{font-size:13px;color:var(--gris);margin-bottom:12px}
+  .produit a{color:var(--vert);font-weight:700;font-size:14px}
+  .produit a:hover{text-decoration:underline}
+
+  .ressources{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ressource{background:#fff;border:1px solid var(--bord);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+  .ressource .img{height:120px}
+  .ressource .corps{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .ressource .type{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--bois);font-weight:700}
+  .ressource h3{font-size:16px}
+  .ressource p{font-size:13px;color:var(--gris)}
+  .ressource a{color:var(--vert);font-weight:700;font-size:14px;margin-top:auto}
+
+  .formulaire{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:stretch}
+  .formulaire .img{border-radius:10px;min-height:100%;background-image:url('https://placehold.co/800x900/1f4a37/fff?text=Boutique+finition+bois');background-size:cover}
+  form{background:#fff;border:1px solid var(--bord);border-radius:10px;padding:32px}
+  form h3{margin-bottom:16px}
+  label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+  input,select,textarea{width:100%;padding:12px;border:1px solid var(--bord);border-radius:6px;font-size:14px;font-family:inherit}
+  textarea{resize:vertical;min-height:90px}
+  .btn-envoyer{background:var(--vert);color:#fff;border:none;width:100%;padding:15px;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;margin-top:18px}
+  .btn-envoyer:hover{background:var(--vert-fonce)}
+
+  .temoignages{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .temoignage{background:#fff;border:1px solid var(--bord);border-radius:10px;padding:24px;font-style:italic;font-size:14px;color:var(--gris)}
+  .temoignage strong{display:block;margin-top:14px;font-style:normal;color:var(--noir);font-size:13px}
+
+  footer{background:var(--noir);color:#ccc;padding:40px 0;font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  footer a{color:#fff}
+
+  @media(max-width:900px){
+    .galerie,.produits,.ressources,.temoignages,.formulaire,.split{grid-template-columns:1fr}
+    nav ul{display:none}
+    .hero h1{font-size:30px}
+    .hero{min-height:auto}
+    .galerie .img:nth-child(1){grid-column:auto;grid-row:auto}
+  }
+</style>
 </head>
-
 <body>
 
-    <!-- ============ NAVIGATION ============ -->
-    <header>
-        <nav class="wrap">
-            <div class="logo">INTERBOIS<span>.</span></div>
-            <ul>
-                <li><a href="#">Produits</a></li>
-                <li><a href="#">Présentation</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">Professionnels</a></li>
-                <li><a href="#devis" class="cta-nav">Devenir partenaire</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- ============ NAVIGATION ============ -->
+<header>
+  <nav class="wrap">
+    <div class="logo">INTERBOIS<span>.</span></div>
+    <ul>
+      <li><a href="#">Produits</a></li>
+      <li><a href="#">Présentation</a></li>
+      <li><a href="#">Documentation</a></li>
+      <li><a href="#">Professionnels</a></li>
+      <li><a href="#devis" class="cta-nav">Devenir partenaire</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <!-- ============ HÉRO ============ -->
-    <div class="hero">
-        <div class="wrap">
-            <p class="breadcrumb"><a href="#">Accueil</a> / Professionnels / Magasins spécialisés</p>
-            <h1>Produits de finition bois et veille de tendances pour les magasins spécialisés</h1>
-            <p>Moulures, revêtements de murs et de plafonds, composantes de portes, d'escaliers et de fenêtres.
-                Interbois fabrique et importe, et sélectionne pour vous des produits actuels qui complètent l'offre de
-                votre boutique.</p>
-            <div class="hero-actions">
-                <a href="#devis" class="btn btn-blanc">Devenir partenaire</a>
-                <a href="#" class="btn btn-outline">Consulter la documentation</a>
-            </div>
-            <div class="confiance">
-                <span><span class="coche">✓</span> Fabrication et importation</span>
-                <span><span class="coche">✓</span> Veille de tendances</span>
-                <span><span class="coche">✓</span> Produits à façon</span>
-            </div>
-        </div>
+<!-- ============ HÉRO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="#">Accueil</a> / Professionnels / Magasins spécialisés</p>
+    <h1>Moulures et revêtements de finition bois à forte valeur perçue pour votre boutique</h1>
+    <p>Des gammes qui soutiennent la valeur perçue, l'inspiration et la marque : moulures, revêtements de murs et de plafonds, composantes de planchers et d'escaliers.</p>
+    <div class="hero-actions">
+      <a href="#devis" class="btn btn-blanc">Devenir partenaire</a>
+      <a href="#" class="btn btn-outline">Consulter la documentation</a>
     </div>
-
-    <!-- ============ BANDE ============ -->
-    <div class="bande">Nous sélectionnons et acheminons vers votre boutique les produits actuels et différenciants.
+    <div class="confiance">
+      <span><span class="coche">✓</span> Fabrication et importation</span>
+      <span><span class="coche">✓</span> Veille de tendances</span>
+      <span><span class="coche">✓</span> Produits à façon</span>
     </div>
+  </div>
+</div>
 
-    <!-- ============ GALERIE ============ -->
-    <section>
-        <div class="wrap">
-            <h2>Sélection et présentation en boutique</h2>
-            <p class="sous-titre">Des produits choisis et une présentation accompagnée par notre équipe.</p>
-            <div class="galerie">
-                <div class="img"
-                    style="background-image:url('https://placehold.co/900x700/8a6f52/fff?text=Selection+moulures')">
-                    <figcaption>Sélection de moulures pour boutique</figcaption>
-                </div>
-                <div class="img"
-                    style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Presentoir+revetements')">
-                    <figcaption>Présentoir revêtements murs &amp; plafonds</figcaption>
-                </div>
-                <div class="img"
-                    style="background-image:url('https://placehold.co/600x400/2e6b4f/fff?text=Rayon+boutique')">
-                    <figcaption>Rayon finition bois en magasin spécialisé</figcaption>
-                </div>
-                <div class="img"
-                    style="background-image:url('https://placehold.co/900x400/6b5a4a/fff?text=Accompagnement')">
-                    <figcaption>Accompagnement par notre représentant</figcaption>
-                </div>
-                <div class="img"
-                    style="background-image:url('https://placehold.co/600x400/d8b48f/fff?text=Produits+tendance')">
-                    <figcaption>Produits tendance et nouveautés</figcaption>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ BANDE ============ -->
+<div class="bande">Des produits qui sortent de la logique de commodité : valeur perçue et inspiration pour votre clientèle.</div>
 
-    <!-- ============ POURQUOI ============ -->
-    <section class="section-grise">
-        <div class="wrap split">
-            <div class="img"
-                style="background-image:url('https://placehold.co/800x900/1f4a37/fff?text=Boutique+finition+bois')">
-            </div>
-            <div>
-                <h2>Un partenaire pour votre offre de finition bois</h2>
-                <p class="sous-titre">Fabrication, importation, veille de tendances et accompagnement.</p>
-                <ul class="points">
-                    <li>
-                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <path d="M4 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16" />
-                                <path d="M12 21V9h5a1 1 0 0 1 1 1v11" />
-                                <path d="M2 21h20" />
-                                <path d="M7 8h2M7 12h2M7 16h2" />
-                            </svg></span>
-                        <div>
-                            <h3>Fabrication et importation</h3>
-                            <p>Interbois fabrique et importe, pour une offre de finition bois complète et cohérente avec
-                                le positionnement de votre boutique.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 17l6-6 4 4 7-7" />
-                                <path d="M15 8h5v5" />
-                            </svg></span>
-                        <div>
-                            <h3>Veille de tendances</h3>
-                            <p>La détection des tendances fait partie de notre mandat : nous vous acheminons les
-                                produits innovants et actuels qui différencient votre offre.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <circle cx="9" cy="20" r="1.6" />
-                                <circle cx="17" cy="20" r="1.6" />
-                                <path d="M3 3h2l2.5 12h10l2-7H7" />
-                            </svg></span>
-                        <div>
-                            <h3>Service et accompagnement</h3>
-                            <p>Nos représentants accompagnent votre équipe dans la sélection et la présentation des
-                                produits en magasin.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <rect x="5" y="3" width="14" height="18" rx="2" />
-                                <path d="M9 8h6M9 12h6M9 16h4" />
-                            </svg></span>
-                        <div>
-                            <h3>Réponse aux besoins particuliers</h3>
-                            <p>Nous répondons aux besoins particuliers de votre clientèle, notamment par la fabrication
-                                à façon.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<!-- ============ GALERIE ============ -->
+<section>
+  <div class="wrap">
+    <h2>Sélection et présentation en boutique</h2>
+    <p class="sous-titre">Des produits choisis et une présentation accompagnée par notre équipe.</p>
+    <div class="galerie">
+      <div class="img" style="background-image:url('https://placehold.co/900x700/8a6f52/fff?text=Revetements+muraux')"><figcaption>Revêtements muraux — lambris et panneaux</figcaption></div>
+      <div class="img" style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Selection+moulures')"><figcaption>Sélection de moulures pour boutique</figcaption></div>
+      <div class="img" style="background-image:url('https://placehold.co/600x400/2e6b4f/fff?text=Rayon+boutique')"><figcaption>Rayon finition bois en magasin spécialisé</figcaption></div>
+      <div class="img" style="background-image:url('https://placehold.co/900x400/6b5a4a/fff?text=Accompagnement')"><figcaption>Accompagnement par notre représentant</figcaption></div>
+      <div class="img" style="background-image:url('https://placehold.co/600x400/d8b48f/fff?text=Planchers+escaliers')"><figcaption>Composantes planchers et escaliers</figcaption></div>
+    </div>
+  </div>
+</section>
 
-    <!-- ============ GAMMES ============ -->
-    <section>
-        <div class="wrap">
-            <h2>Notre offre de finition bois</h2>
-            <p class="sous-titre">Une sélection complète, fabriquée et importée, adaptée à votre boutique.</p>
-            <div class="produits">
-                <div class="produit">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Moulures')"></div>
-                    <div class="corps">
-                        <h3>Moulures et accessoires</h3>
-                        <p>Profils et finitions pour des projets distinctifs.</p><a href="#">Voir la gamme →</a>
-                    </div>
-                </div>
-                <div class="produit">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x400/8a6f52/fff?text=Revetements')"></div>
-                    <div class="corps">
-                        <h3>Revêtements de murs et de plafonds</h3>
-                        <p>Lambris, shiplap et panneaux tendance.</p><a href="#">Voir la gamme →</a>
-                    </div>
-                </div>
-                <div class="produit">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x400/6b5a4a/fff?text=Composantes')"></div>
-                    <div class="corps">
-                        <h3>Composantes de portes, d'escaliers et de fenêtres</h3>
-                        <p>Jambages et profils, disponibles à façon.</p><a href="#">Voir la gamme →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ POURQUOI ============ -->
+<section class="section-grise">
+  <div class="wrap split">
+    <div class="img" style="background-image:url('https://placehold.co/800x900/1f4a37/fff?text=Boutique+finition+bois')"></div>
+    <div>
+      <h2>Un partenaire pour votre offre de finition bois</h2>
+      <p class="sous-titre">Fabrication, importation, veille de tendances et accompagnement.</p>
+      <ul class="points">
+        <li>
+          <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16"/><path d="M12 21V9h5a1 1 0 0 1 1 1v11"/><path d="M2 21h20"/><path d="M7 8h2M7 12h2M7 16h2"/></svg></span>
+          <div><h3>Fabrication et importation</h3><p>Interbois fabrique et importe, pour une offre complète et cohérente avec le positionnement de votre boutique.</p></div>
+        </li>
+        <li>
+          <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 7-7"/><path d="M15 8h5v5"/></svg></span>
+          <div><h3>Veille de tendances</h3><p>La détection des tendances fait partie de notre mandat : nous acheminons les produits innovants et actuels qui différencient votre offre.</p></div>
+        </li>
+        <li>
+          <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 3h2l2.5 12h10l2-7H7"/></svg></span>
+          <div><h3>Service et accompagnement</h3><p>Nos représentants accompagnent votre équipe dans la sélection et la présentation des produits en magasin.</p></div>
+        </li>
+        <li>
+          <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+          <div><h3>Réponse aux besoins particuliers</h3><p>Nous répondons aux besoins particuliers de votre clientèle, notamment par la fabrication à façon.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <!-- ============ RESSOURCES ============ -->
-    <section class="section-grise">
-        <div class="wrap">
-            <h2>Espace partenaire</h2>
-            <p class="sous-titre">Documentation et programme à destination des magasins spécialisés.</p>
-            <div class="ressources">
-                <div class="ressource">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x300/2e6b4f/fff?text=Kit+boutique')"></div>
-                    <div class="corps"><span class="type">Programme</span>
-                        <h3>Kit boutique et présentoirs</h3>
-                        <p>Modules, plan d'implantation et matériel de présentation.</p><a href="#">Télécharger →</a>
-                    </div>
-                </div>
-                <div class="ressource">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x300/1f4a37/fff?text=Catalogue')"></div>
-                    <div class="corps"><span class="type">Catalogue</span>
-                        <h3>Gamme complète 2025</h3>
-                        <p>Le catalogue produit en format PDF, à jour.</p><a href="#">Télécharger →</a>
-                    </div>
-                </div>
-                <div class="ressource">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x300/b98a5e/fff?text=Tarifs')"></div>
-                    <div class="corps"><span class="type">Accès réservé</span>
-                        <h3>Conditions partenaire</h3>
-                        <p>Tarifs et conditions adaptés — sur demande, après vérification.</p><a href="#">Demander
-                            l'accès →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ GAMMES (revêtements en avant) ============ -->
+<section>
+  <div class="wrap">
+    <h2>Nos gammes pour votre boutique</h2>
+    <p class="sous-titre">Une sélection orientée valeur perçue, inspiration et marge.</p>
+    <div class="produits">
+      <div class="produit">
+        <div class="img" style="background-image:url('https://placehold.co/600x400/8a6f52/fff?text=Revetements')"></div>
+        <div class="corps"><h3>Revêtements de murs et de plafonds</h3><p>Lambris, shiplap et panneaux : des produits d'inspiration et à plus forte marge.</p><a href="#">Voir la gamme →</a></div>
+      </div>
+      <div class="produit">
+        <div class="img" style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Moulures')"></div>
+        <div class="corps"><h3>Moulures et accessoires</h3><p>Profils et finitions pour des projets distinctifs.</p><a href="#">Voir la gamme →</a></div>
+      </div>
+      <div class="produit">
+        <div class="img" style="background-image:url('https://placehold.co/600x400/6b5a4a/fff?text=Planchers+escaliers')"></div>
+        <div class="corps"><h3>Composantes de planchers et d'escaliers</h3><p>Éléments complémentaires pour l'agencement des boiseries.</p><a href="#">Voir la gamme →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ============ FORMULAIRE ============ -->
-    <section id="devis">
-        <div class="wrap formulaire">
-            <div class="img"></div>
-            <form>
-                <h3>Devenir partenaire</h3>
-                <p style="font-size:14px;color:var(--gris);margin-bottom:10px">Réponse sous 48 h ouvrées par un
-                    représentant dédié.</p>
-                <label>Entreprise *</label><input type="text" placeholder="Nom de votre commerce" required>
-                <label>Type de commerce *</label>
-                <select required>
-                    <option>Magasin spécialisé (bois, rénovation, décoration)</option>
-                    <option>Boutique de décoration</option>
-                    <option>Magasin de revêtements</option>
-                    <option>Autre</option>
-                </select>
-                <label>Nombre de points de vente</label>
-                <input type="text" placeholder="Ex. : 1, 3, 8…">
-                <label>Nom et courriel *</label>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-                    <input type="text" placeholder="Votre nom" required>
-                    <input type="email" placeholder="Courriel" required>
-                </div>
-                <label>Votre besoin</label>
-                <textarea placeholder="Sélection de produits, veille de tendances, conditions…"></textarea>
-                <button type="submit" class="btn-envoyer">Envoyer ma demande</button>
-                <p style="font-size:12px;color:var(--gris);margin-top:10px">Sans engagement.</p>
-            </form>
-        </div>
-    </section>
+<!-- ============ RESSOURCES ============ -->
+<section class="section-grise">
+  <div class="wrap">
+    <h2>Espace partenaire</h2>
+    <p class="sous-titre">Documentation et programme à destination des magasins spécialisés.</p>
+    <div class="ressources">
+      <div class="ressource">
+        <div class="img" style="background-image:url('https://placehold.co/600x300/2e6b4f/fff?text=Kit+boutique')"></div>
+        <div class="corps"><span class="type">Programme</span><h3>Kit boutique et présentoirs</h3><p>Modules, plan d'implantation et matériel de présentation.</p><a href="#">Télécharger →</a></div>
+      </div>
+      <div class="ressource">
+        <div class="img" style="background-image:url('https://placehold.co/600x300/1f4a37/fff?text=Catalogue')"></div>
+        <div class="corps"><span class="type">Catalogue</span><h3>Gamme complète 2025</h3><p>Le catalogue produit en format PDF, à jour.</p><a href="#">Télécharger →</a></div>
+      </div>
+      <div class="ressource">
+        <div class="img" style="background-image:url('https://placehold.co/600x300/b98a5e/fff?text=Tarifs')"></div>
+        <div class="corps"><span class="type">Accès réservé</span><h3>Conditions partenaire</h3><p>Tarifs et conditions adaptés — sur demande, après vérification.</p><a href="#">Demander l'accès →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ============ TÉMOIGNAGES ============ -->
-    <section class="section-grise">
-        <div class="wrap">
-            <h2>Références</h2>
-            <div class="temoignages">
-                <div class="temoignage">« La sélection proposée distingue notre offre : nos clients reviennent pour les
-                    nouveautés. »<strong>— Magasin spécialisé, Québec</strong></div>
-                <div class="temoignage">« Leur équipe nous accompagne dans la présentation des produits en magasin.
-                    »<strong>— Boutique de décoration, Montréal</strong></div>
-                <div class="temoignage">« Des produits à façon qui répondent aux demandes particulières de notre
-                    clientèle. »<strong>— Magasin de bois, Beauce</strong></div>
-            </div>
-        </div>
-    </section>
+<!-- ============ FORMULAIRE ============ -->
+<section id="devis">
+  <div class="wrap formulaire">
+    <div class="img"></div>
+    <form>
+      <h3>Devenir partenaire</h3>
+      <p style="font-size:14px;color:var(--gris);margin-bottom:10px">Réponse sous 48 h ouvrées par un représentant dédié.</p>
+      <label>Entreprise *</label><input type="text" placeholder="Nom de votre commerce" required>
+      <label>Type de commerce *</label>
+      <select required>
+        <option>Magasin spécialisé (bois, rénovation, décoration)</option>
+        <option>Boutique de décoration</option>
+        <option>Magasin de revêtements</option>
+        <option>Autre</option>
+      </select>
+      <label>Gammes d'intérêt</label>
+      <select>
+        <option>Revêtements de murs et de plafonds</option>
+        <option>Moulures et accessoires</option>
+        <option>Composantes planchers et escaliers</option>
+        <option>Plusieurs gammes</option>
+      </select>
+      <label>Nombre de points de vente</label>
+      <input type="text" placeholder="Ex. : 1, 3, 8…">
+      <label>Nom et courriel *</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Courriel" required>
+      </div>
+      <label>Votre besoin</label>
+      <textarea placeholder="Sélection de produits, inspiration, conditions…"></textarea>
+      <button type="submit" class="btn-envoyer">Envoyer ma demande</button>
+      <p style="font-size:12px;color:var(--gris);margin-top:10px">Sans engagement.</p>
+    </form>
+  </div>
+</section>
 
-    <!-- ============ PIED DE PAGE ============ -->
-    <footer>
-        <div class="wrap">
-            <div>© 2025 Interbois — Saint-Odilon-de-Cranbourne, Québec</div>
-            <div><a href="#">Professionnels</a> · <a href="#">Distributeurs</a> · <a href="#">Carrières</a></div>
-        </div>
-    </footer>
+<!-- ============ TÉMOIGNAGES ============ -->
+<section class="section-grise">
+  <div class="wrap">
+    <h2>Références</h2>
+    <div class="temoignages">
+      <div class="temoignage">« Les revêtements muraux soutiennent la valeur de notre offre : des produits que nos clients remarquent. »<strong>— Magasin spécialisé, Québec</strong></div>
+      <div class="temoignage">« Leur veille de tendances nous permet de présenter des produits actuels. »<strong>— Boutique de décoration, Montréal</strong></div>
+      <div class="temoignage">« Des produits à façon qui répondent aux demandes particulières de notre clientèle. »<strong>— Magasin de bois, Beauce</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer>
+  <div class="wrap">
+    <div>© 2025 Interbois — Saint-Odilon-de-Cranbourne, Québec</div>
+    <div><a href="#">Professionnels</a> · <a href="#">Distributeurs</a> · <a href="#">Carrières</a></div>
+  </div>
+</footer>
 
 </body>
-
 </html>
