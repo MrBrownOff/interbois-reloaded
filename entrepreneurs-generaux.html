@@ -1,780 +1,287 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solutions professionnelles — Interbois</title>
-    <style>
-        :root {
-            --vert: #2e6b4f;
-            --vert-fonce: #1f4a37;
-            --bois: #b98a5e;
-            --gris: #5a5a5a;
-            --gris-clair: #f4f1ec;
-            --blanc: #fff;
-            --noir: #222;
-            --bord: #e2dcd2;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            color: var(--noir);
-            line-height: 1.55
-        }
-
-        .wrap {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 20px
-        }
-
-        a {
-            text-decoration: none
-        }
-
-        .img {
-            background-size: cover;
-            background-position: center;
-            background-color: #d8d2c6
-        }
-
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
-            background: linear-gradient(rgba(0, 0, 0, .35), transparent)
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 70px
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 20px;
-            color: #fff
-        }
-
-        .logo span {
-            color: var(--bois)
-        }
-
-        nav ul {
-            display: flex;
-            gap: 26px;
-            list-style: none;
-            font-size: 14px
-        }
-
-        nav a {
-            color: #fff;
-            opacity: .92
-        }
-
-        nav a:hover {
-            opacity: 1;
-            text-decoration: underline
-        }
-
-        .cta-nav {
-            background: #fff;
-            color: var(--vert-fonce) !important;
-            padding: 9px 18px;
-            border-radius: 4px;
-            font-weight: 600;
-            opacity: 1
-        }
-
-        .hero {
-            position: relative;
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            background-image: linear-gradient(rgba(20, 40, 32, .55), rgba(20, 40, 32, .75)), url('https://placehold.co/1600x900/2e6b4f/fff?text=Chantier+finition+bois');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 120px 0 80px
-        }
-
-        .hero .breadcrumb {
-            font-size: 13px;
-            opacity: .85;
-            margin-bottom: 24px
-        }
-
-        .hero .breadcrumb a {
-            color: #fff
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            line-height: 1.15;
-            max-width: 720px;
-            margin-bottom: 18px
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            opacity: .95
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 14px;
-            margin-top: 32px;
-            flex-wrap: wrap
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 15px
-        }
-
-        .btn-blanc {
-            background: #fff;
-            color: var(--vert-fonce)
-        }
-
-        .btn-outline {
-            border: 2px solid #fff;
-            color: #fff
-        }
-
-        .hero .confiance {
-            display: flex;
-            gap: 26px;
-            margin-top: 46px;
-            flex-wrap: wrap;
-            font-size: 14px;
-            font-weight: 600
-        }
-
-        .hero .confiance span {
-            display: flex;
-            align-items: center;
-            gap: 8px
-        }
-
-        .hero .confiance .coche {
-            color: var(--bois);
-            font-weight: 700
-        }
-
-        .bande {
-            background: var(--bois);
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 17px;
-            font-weight: 600
-        }
-
-        section {
-            padding: 70px 0
-        }
-
-        h2 {
-            font-size: 30px;
-            margin-bottom: 10px
-        }
-
-        .sous-titre {
-            color: var(--gris);
-            margin-bottom: 36px;
-            max-width: 620px;
-            font-size: 16px
-        }
-
-        .section-grise {
-            background: var(--gris-clair)
-        }
-
-        .galerie {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 200px;
-            gap: 14px
-        }
-
-        .galerie .img {
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden
-        }
-
-        .galerie .img:nth-child(1) {
-            grid-column: span 2;
-            grid-row: span 2
-        }
-
-        .galerie .img:nth-child(4) {
-            grid-column: span 2
-        }
-
-        .galerie .img figcaption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 28px 14px 12px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #fff;
-            background: linear-gradient(transparent, rgba(0, 0, 0, .7))
-        }
-
-        .split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center
-        }
-
-        .split .img {
-            border-radius: 10px;
-            min-height: 420px;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, .15)
-        }
-
-        .points li {
-            list-style: none;
-            display: flex;
-            gap: 16px;
-            margin-bottom: 22px
-        }
-
-        .points .ico {
-            flex: 0 0 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: var(--gris-clair);
-            color: var(--vert);
-            display: flex;
-            align-items: center;
-            justify-content: center
-        }
-
-        .points h3 {
-            font-size: 17px;
-            color: var(--vert-fonce);
-            margin-bottom: 4px
-        }
-
-        .points p {
-            font-size: 14px;
-            color: var(--gris)
-        }
-
-        .produits {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px
-        }
-
-        .produit {
-            background: #fff;
-            border: 1px solid var(--bord);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform .25s, box-shadow .25s
-        }
-
-        .produit:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 14px 30px rgba(0, 0, 0, .12)
-        }
-
-        .produit .img {
-            height: 210px
-        }
-
-        .produit .corps {
-            padding: 20px
-        }
-
-        .produit h3 {
-            font-size: 17px;
-            margin-bottom: 6px
-        }
-
-        .produit p {
-            font-size: 13px;
-            color: var(--gris);
-            margin-bottom: 12px
-        }
-
-        .produit a {
-            color: var(--vert);
-            font-weight: 700;
-            font-size: 14px
-        }
-
-        .produit a:hover {
-            text-decoration: underline
-        }
-
-        .ressources {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px
-        }
-
-        .ressource {
-            background: #fff;
-            border: 1px solid var(--bord);
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column
-        }
-
-        .ressource .img {
-            height: 120px
-        }
-
-        .ressource .corps {
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            flex: 1
-        }
-
-        .ressource .type {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            color: var(--bois);
-            font-weight: 700
-        }
-
-        .ressource h3 {
-            font-size: 16px
-        }
-
-        .ressource p {
-            font-size: 13px;
-            color: var(--gris)
-        }
-
-        .ressource a {
-            color: var(--vert);
-            font-weight: 700;
-            font-size: 14px;
-            margin-top: auto
-        }
-
-        .formulaire {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 44px;
-            align-items: stretch
-        }
-
-        .formulaire .img {
-            border-radius: 10px;
-            min-height: 100%;
-            background-image: url('https://placehold.co/800x900/1f4a37/fff?text=Usine+Interbois');
-            background-size: cover
-        }
-
-        form {
-            background: #fff;
-            border: 1px solid var(--bord);
-            border-radius: 10px;
-            padding: 32px
-        }
-
-        form h3 {
-            margin-bottom: 16px
-        }
-
-        label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            margin: 12px 0 4px
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--bord);
-            border-radius: 6px;
-            font-size: 14px;
-            font-family: inherit
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 90px
-        }
-
-        .btn-envoyer {
-            background: var(--vert);
-            color: #fff;
-            border: none;
-            width: 100%;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 18px
-        }
-
-        .btn-envoyer:hover {
-            background: var(--vert-fonce)
-        }
-
-        .temoignages {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px
-        }
-
-        .temoignage {
-            background: #fff;
-            border: 1px solid var(--bord);
-            border-radius: 10px;
-            padding: 24px;
-            font-style: italic;
-            font-size: 14px;
-            color: var(--gris)
-        }
-
-        .temoignage strong {
-            display: block;
-            margin-top: 14px;
-            font-style: normal;
-            color: var(--noir);
-            font-size: 13px
-        }
-
-        footer {
-            background: var(--noir);
-            color: #ccc;
-            padding: 40px 0;
-            font-size: 13px
-        }
-
-        footer .wrap {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px
-        }
-
-        footer a {
-            color: #fff
-        }
-
-        @media(max-width:900px) {
-
-            .galerie,
-            .produits,
-            .ressources,
-            .temoignages,
-            .formulaire,
-            .split {
-                grid-template-columns: 1fr
-            }
-
-            nav ul {
-                display: none
-            }
-
-            .hero h1 {
-                font-size: 30px
-            }
-
-            .hero {
-                min-height: auto
-            }
-
-            .galerie .img:nth-child(1) {
-                grid-column: auto;
-                grid-row: auto
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions professionnelles — Interbois</title>
+<style>
+  :root{
+    --vert:#2e6b4f; --vert-fonce:#1f4a37; --bois:#b98a5e;
+    --gris:#5a5a5a; --gris-clair:#f4f1ec; --blanc:#fff;
+    --noir:#222; --bord:#e2dcd2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Segoe UI",Arial,sans-serif;color:var(--noir);line-height:1.55}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  a{text-decoration:none}
+  .img{background-size:cover;background-position:center;background-color:#d8d2c6}
+
+  header{position:absolute;top:0;left:0;right:0;z-index:10;background:linear-gradient(rgba(0,0,0,.35),transparent)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-weight:700;font-size:20px;color:#fff}
+  .logo span{color:var(--bois)}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:14px}
+  nav a{color:#fff;opacity:.92}
+  nav a:hover{opacity:1;text-decoration:underline}
+  .cta-nav{background:#fff;color:var(--vert-fonce)!important;padding:9px 18px;border-radius:4px;font-weight:600;opacity:1}
+
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;
+    background-image:linear-gradient(rgba(20,40,32,.55),rgba(20,40,32,.75)),url('https://placehold.co/1600x900/2e6b4f/fff?text=Chantier+finition+bois');
+    background-size:cover;background-position:center;color:#fff;padding:120px 0 80px}
+  .hero .breadcrumb{font-size:13px;opacity:.85;margin-bottom:24px}
+  .hero .breadcrumb a{color:#fff}
+  .hero h1{font-size:42px;line-height:1.15;max-width:720px;margin-bottom:18px}
+  .hero p{font-size:18px;max-width:600px;opacity:.95}
+  .hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;border-radius:5px;font-weight:700;font-size:15px}
+  .btn-blanc{background:#fff;color:var(--vert-fonce)}
+  .btn-outline{border:2px solid #fff;color:#fff}
+  .hero .confiance{display:flex;gap:26px;margin-top:46px;flex-wrap:wrap;font-size:14px;font-weight:600}
+  .hero .confiance span{display:flex;align-items:center;gap:8px}
+  .hero .confiance .coche{color:var(--bois);font-weight:700}
+
+  .bande{background:var(--bois);color:#fff;text-align:center;padding:20px;font-size:17px;font-weight:600}
+
+  section{padding:70px 0}
+  h2{font-size:30px;margin-bottom:10px}
+  .sous-titre{color:var(--gris);margin-bottom:36px;max-width:620px;font-size:16px}
+  .section-grise{background:var(--gris-clair)}
+
+  .galerie{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+  .galerie .img{border-radius:8px;position:relative;overflow:hidden}
+  .galerie .img:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .galerie .img:nth-child(4){grid-column:span 2}
+  .galerie .img figcaption{position:absolute;bottom:0;left:0;right:0;padding:28px 14px 12px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .split .img{border-radius:10px;min-height:420px;box-shadow:0 18px 40px rgba(0,0,0,.15)}
+  .points li{list-style:none;display:flex;gap:16px;margin-bottom:22px}
+  .points .ico{flex:0 0 52px;height:52px;border-radius:50%;background:var(--gris-clair);color:var(--vert);display:flex;align-items:center;justify-content:center}
+  .points h3{font-size:17px;color:var(--vert-fonce);margin-bottom:4px}
+  .points p{font-size:14px;color:var(--gris)}
+
+  .produits{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .produit{background:#fff;border:1px solid var(--bord);border-radius:10px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+  .produit:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.12)}
+  .produit .img{height:210px}
+  .produit .corps{padding:20px}
+  .produit h3{font-size:17px;margin-bottom:6px}
+  .produit p{font-size:13px;color:var(--gris);margin-bottom:12px}
+  .produit a{color:var(--vert);font-weight:700;font-size:14px}
+  .produit a:hover{text-decoration:underline}
+  .note{margin-top:26px;padding:18px 22px;background:var(--gris-clair);border-left:4px solid var(--vert);border-radius:6px;font-size:14px;color:var(--gris)}
+
+  .ressources{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ressource{background:#fff;border:1px solid var(--bord);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+  .ressource .img{height:120px}
+  .ressource .corps{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .ressource .type{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--bois);font-weight:700}
+  .ressource h3{font-size:16px}
+  .ressource p{font-size:13px;color:var(--gris)}
+  .ressource a{color:var(--vert);font-weight:700;font-size:14px;margin-top:auto}
+
+  .formulaire{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:stretch}
+  .formulaire .img{border-radius:10px;min-height:100%;background-image:url('https://placehold.co/800x900/1f4a37/fff?text=Usine+Interbois');background-size:cover}
+  form{background:#fff;border:1px solid var(--bord);border-radius:10px;padding:32px}
+  form h3{margin-bottom:16px}
+  label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+  input,select,textarea{width:100%;padding:12px;border:1px solid var(--bord);border-radius:6px;font-size:14px;font-family:inherit}
+  textarea{resize:vertical;min-height:90px}
+  .btn-envoyer{background:var(--vert);color:#fff;border:none;width:100%;padding:15px;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;margin-top:18px}
+  .btn-envoyer:hover{background:var(--vert-fonce)}
+
+  .temoignages{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .temoignage{background:#fff;border:1px solid var(--bord);border-radius:10px;padding:24px;font-style:italic;font-size:14px;color:var(--gris)}
+  .temoignage strong{display:block;margin-top:14px;font-style:normal;color:var(--noir);font-size:13px}
+
+  footer{background:var(--noir);color:#ccc;padding:40px 0;font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  footer a{color:#fff}
+
+  @media(max-width:900px){
+    .galerie,.produits,.ressources,.temoignages,.formulaire,.split{grid-template-columns:1fr}
+    nav ul{display:none}
+    .hero h1{font-size:30px}
+    .hero{min-height:auto}
+    .galerie .img:nth-child(1){grid-column:auto;grid-row:auto}
+  }
+</style>
 </head>
-
 <body>
 
-    <!-- ============ NAVIGATION ============ -->
-    <header>
-        <nav class="wrap">
-            <div class="logo">INTERBOIS<span>.</span></div>
-            <ul>
-                <li><a href="#">Produits</a></li>
-                <li><a href="#">Réalisations</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">Professionnels</a></li>
-                <li><a href="#devis" class="cta-nav">Demander une soumission</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- ============ NAVIGATION ============ -->
+<header>
+  <nav class="wrap">
+    <div class="logo">INTERBOIS<span>.</span></div>
+    <ul>
+      <li><a href="#">Produits</a></li>
+      <li><a href="#">Réalisations</a></li>
+      <li><a href="#">Documentation</a></li>
+      <li><a href="#">Professionnels</a></li>
+      <li><a href="#devis" class="cta-nav">Demander une soumission</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <!-- ============ HÉRO ============ -->
-    <div class="hero">
-        <div class="wrap">
-            <p class="breadcrumb"><a href="#">Accueil</a> / Professionnels / Entrepreneurs généraux</p>
-            <h1>Produits de finition bois livrés sur vos chantiers, au moment convenu</h1>
-            <p>Moulures, revêtements de murs et de plafonds, composantes de portes, d'escaliers et de fenêtres.
-                Interbois fabrique et livre les quantités nécessaires à vos projets, selon votre calendrier de chantier.
-            </p>
-            <div class="hero-actions">
-                <a href="#devis" class="btn btn-blanc">Demander une soumission</a>
-                <a href="#" class="btn btn-outline">Consulter la documentation technique</a>
-            </div>
-            <div class="confiance">
-                <span><span class="coche">✓</span> Livraison coordonnée aux chantiers</span>
-                <span><span class="coche">✓</span> Fabrication à façon</span>
-                <span><span class="coche">✓</span> 30 ans d'expérience</span>
-            </div>
-        </div>
+<!-- ============ HÉRO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="#">Accueil</a> / Professionnels / Entrepreneurs généraux &amp; promoteurs</p>
+    <h1>Composantes et moulures de finition bois livrées sur vos chantiers</h1>
+    <p>Moulures, revêtements et composantes de portes, d'escaliers et de fenêtres, livrés selon votre calendrier de chantier.</p>
+    <div class="hero-actions">
+      <a href="#devis" class="btn btn-blanc">Demander une soumission</a>
+      <a href="#" class="btn btn-outline">Consulter la documentation technique</a>
     </div>
+    <div class="confiance">
+      <span><span class="coche">✓</span> Livraison coordonnée aux chantiers</span>
+      <span><span class="coche">✓</span> Composantes à façon</span>
+      <span><span class="coche">✓</span> 30 ans d'expérience</span>
+    </div>
+  </div>
+</div>
 
-    <!-- ============ BANDE ============ -->
-    <div class="bande">Nos livraisons sont planifiées selon votre calendrier et acheminées directement sur les
-        chantiers.</div>
+<!-- ============ BANDE ============ -->
+<div class="bande">Nos livraisons sont planifiées selon votre calendrier et acheminées directement sur les chantiers.</div>
 
-    <!-- ============ GALERIE ============ -->
-    <section>
-        <div class="wrap">
-            <h2>Réalisations sur chantiers</h2>
-            <p class="sous-titre">Exemples de finitions installées et de livraisons coordonnées.</p>
-            <div class="galerie">
-                <div class="img"
-                    style="background-image:url('https://placehold.co/900x700/8a6f52/fff?text=Batis+installes')">
-                    <figcaption>Bâtis installés — chantier résidentiel</figcaption>
-                </div>
-                <div class="img"
-                    style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Livraison+chantier')">
-                    <figcaption>Livraison coordonnée sur chantier</figcaption>
-                </div>
-                <div class="img"
-                    style="background-image:url('https://placehold.co/600x400/2e6b4f/fff?text=Revetements+poses')">
-                    <figcaption>Revêtements muraux posés</figcaption>
-                </div>
-                <div class="img"
-                    style="background-image:url('https://placehold.co/900x400/6b5a4a/fff?text=Moulures+finitions')">
-                    <figcaption>Moulures et finitions en place</figcaption>
-                </div>
-                <div class="img" style="background-image:url('https://placehold.co/600x400/d8b48f/fff?text=Usine')">
-                    <figcaption>Usine de Saint-Odilon-de-Cranbourne</figcaption>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ GALERIE ============ -->
+<section>
+  <div class="wrap">
+    <h2>Réalisations sur chantiers</h2>
+    <p class="sous-titre">Exemples de finitions installées et de livraisons coordonnées.</p>
+    <div class="galerie">
+      <div class="img" style="background-image:url('https://placehold.co/900x700/8a6f52/fff?text=Composantes+installees')"><figcaption>Composantes installées — projet résidentiel</figcaption></div>
+      <div class="img" style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Livraison+chantier')"><figcaption>Livraison coordonnée sur chantier</figcaption></div>
+      <div class="img" style="background-image:url('https://placehold.co/600x400/2e6b4f/fff?text=Moulures+finitions')"><figcaption>Moulures et finitions en place</figcaption></div>
+      <div class="img" style="background-image:url('https://placehold.co/900x400/6b5a4a/fff?text=Revetements+poses')"><figcaption>Revêtements muraux posés</figcaption></div>
+      <div class="img" style="background-image:url('https://placehold.co/600x400/d8b48f/fff?text=Usine')"><figcaption>Usine de Saint-Odilon-de-Cranbourne</figcaption></div>
+    </div>
+  </div>
+</section>
 
-    <!-- ============ POURQUOI ============ -->
-    <section class="section-grise">
-        <div class="wrap split">
-            <div class="img"
-                style="background-image:url('https://placehold.co/800x900/1f4a37/fff?text=Usine+Interbois+Beauce')">
-            </div>
-            <div>
-                <h2>Un fournisseur fiable pour vos projets</h2>
-                <p class="sous-titre">Livraison, offre complète et conformité au service de vos chantiers.</p>
-                <ul class="points">
-                    <li>
-                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 6h11v10H3z" />
-                                <path d="M14 9h4l3 3v4h-7z" />
-                                <circle cx="7" cy="18" r="1.6" />
-                                <circle cx="17" cy="18" r="1.6" />
-                            </svg></span>
-                        <div>
-                            <h3>Livraison coordonnée aux chantiers</h3>
-                            <p>Nos livraisons sont planifiées avec votre calendrier et acheminées directement sur les
-                                chantiers, au moment convenu.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <rect x="2" y="9" width="20" height="6" rx="1" />
-                                <path d="M6 9v3M10 9v3M14 9v3M18 9v3" />
-                            </svg></span>
-                        <div>
-                            <h3>Offre complète</h3>
-                            <p>Moulures, revêtements et composantes disponibles en une seule commande, en quantités
-                                adaptées à vos projets.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <rect x="5" y="3" width="14" height="18" rx="2" />
-                                <path d="M9 8h6M9 12h6M9 16h4" />
-                            </svg></span>
-                        <div>
-                            <h3>Conformité et documentation</h3>
-                            <p>Une qualité constante et une documentation technique complète (spécifications, normes)
-                                pour vos dossiers.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <circle cx="12" cy="12" r="9" />
-                                <path d="M12 7v5l3 3" />
-                            </svg></span>
-                        <div>
-                            <h3>Expérience</h3>
-                            <p>Trente ans d'expérience auprès des professionnels de la construction et de la finition au
-                                Québec.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<!-- ============ POURQUOI ============ -->
+<section class="section-grise">
+  <div class="wrap split">
+    <div class="img" style="background-image:url('https://placehold.co/800x900/1f4a37/fff?text=Usine+Interbois+Beauce')"></div>
+    <div>
+      <h2>Un fournisseur fiable pour vos projets</h2>
+      <p class="sous-titre">Livraison, composantes et conformité au service de vos chantiers.</p>
+      <ul class="points">
+        <li>
+          <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h11v10H3z"/><path d="M14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span>
+          <div><h3>Livraison coordonnée</h3><p>Nos livraisons sont planifiées avec votre calendrier et acheminées directement sur les chantiers, au moment convenu.</p></div>
+        </li>
+        <li>
+          <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="9" width="20" height="6" rx="1"/><path d="M6 9v3M10 9v3M14 9v3M18 9v3"/></svg></span>
+          <div><h3>Composantes à façon</h3><p>Jambages et profils aux dimensions requises, pour simplifier la pose sur vos projets.</p></div>
+        </li>
+        <li>
+          <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+          <div><h3>Conformité et documentation</h3><p>Une qualité constante et une documentation technique complète pour vos dossiers.</p></div>
+        </li>
+        <li>
+          <span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <div><h3>Expérience</h3><p>Trente ans d'expérience auprès des professionnels de la construction et de la finition au Québec.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <!-- ============ GAMMES ============ -->
-    <section>
-        <div class="wrap">
-            <h2>Notre offre de finition bois</h2>
-            <p class="sous-titre">Des produits disponibles en volume, à façon et livrés sur chantier.</p>
-            <div class="produits">
-                <div class="produit">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Moulures')"></div>
-                    <div class="corps">
-                        <h3>Moulures et accessoires</h3>
-                        <p>Profils et finitions pour vos projets.</p><a href="#">Voir la gamme →</a>
-                    </div>
-                </div>
-                <div class="produit">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x400/8a6f52/fff?text=Revetements')"></div>
-                    <div class="corps">
-                        <h3>Revêtements de murs et de plafonds</h3>
-                        <p>Lambris, shiplap et panneaux.</p><a href="#">Voir la gamme →</a>
-                    </div>
-                </div>
-                <div class="produit">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x400/6b5a4a/fff?text=Composantes')"></div>
-                    <div class="corps">
-                        <h3>Composantes de portes, d'escaliers et de fenêtres</h3>
-                        <p>Jambages et profils, disponibles à façon.</p><a href="#">Voir la gamme →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ GAMMES (composantes en avant) ============ -->
+<section>
+  <div class="wrap">
+    <h2>Notre offre pour vos projets</h2>
+    <p class="sous-titre">Des produits disponibles en volume, à façon et livrés sur chantier.</p>
+    <div class="produits">
+      <div class="produit">
+        <div class="img" style="background-image:url('https://placehold.co/600x400/8a6f52/fff?text=Composantes')"></div>
+        <div class="corps"><h3>Composantes de portes, d'escaliers et de fenêtres</h3><p>Jambages et profils, disponibles à façon.</p><a href="#">Voir la gamme →</a></div>
+      </div>
+      <div class="produit">
+        <div class="img" style="background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Moulures')"></div>
+        <div class="corps"><h3>Moulures et accessoires</h3><p>Profils et finitions pour vos projets.</p><a href="#">Voir la gamme →</a></div>
+      </div>
+      <div class="produit">
+        <div class="img" style="background-image:url('https://placehold.co/600x400/6b5a4a/fff?text=Revetements')"></div>
+        <div class="corps"><h3>Revêtements de murs et de plafonds</h3><p>Lambris, shiplap et panneaux.</p><a href="#">Voir la gamme →</a></div>
+      </div>
+    </div>
+    <div class="note">Le développement de nos composantes auprès des promoteurs et fabricants se fait de façon sélective, selon le volume, la marge et la récurrence des projets.</div>
+  </div>
+</section>
 
-    <!-- ============ RESSOURCES ============ -->
-    <section class="section-grise">
-        <div class="wrap">
-            <h2>Ressources techniques</h2>
-            <p class="sous-titre">Documentation à destination de vos équipes de projet et d'installation.</p>
-            <div class="ressources">
-                <div class="ressource">
-                    <div class="img" style="background-image:url('https://placehold.co/600x300/2e6b4f/fff?text=DWG')">
-                    </div>
-                    <div class="corps"><span class="type">Fichiers CAO</span>
-                        <h3>Bibliothèque DWG/DXF</h3>
-                        <p>Profils et composantes prêts à insérer dans vos plans.</p><a href="#">Télécharger →</a>
-                    </div>
-                </div>
-                <div class="ressource">
-                    <div class="img" style="background-image:url('https://placehold.co/600x300/1f4a37/fff?text=Specs')">
-                    </div>
-                    <div class="corps"><span class="type">Guide technique</span>
-                        <h3>Spécifications et tolérances</h3>
-                        <p>Essences, grades, finitions et normes de fabrication.</p><a href="#">Télécharger →</a>
-                    </div>
-                </div>
-                <div class="ressource">
-                    <div class="img"
-                        style="background-image:url('https://placehold.co/600x300/b98a5e/fff?text=Catalogue')"></div>
-                    <div class="corps"><span class="type">Catalogue</span>
-                        <h3>Gamme complète 2025</h3>
-                        <p>Le catalogue produit en format PDF, à jour.</p><a href="#">Télécharger →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ RESSOURCES ============ -->
+<section class="section-grise">
+  <div class="wrap">
+    <h2>Ressources techniques</h2>
+    <p class="sous-titre">Documentation à destination de vos équipes de projet et d'installation.</p>
+    <div class="ressources">
+      <div class="ressource">
+        <div class="img" style="background-image:url('https://placehold.co/600x300/2e6b4f/fff?text=DWG')"></div>
+        <div class="corps"><span class="type">Fichiers CAO</span><h3>Bibliothèque DWG/DXF</h3><p>Profils et composantes prêts à insérer dans vos plans.</p><a href="#">Télécharger →</a></div>
+      </div>
+      <div class="ressource">
+        <div class="img" style="background-image:url('https://placehold.co/600x300/1f4a37/fff?text=Specs')"></div>
+        <div class="corps"><span class="type">Guide technique</span><h3>Spécifications et tolérances</h3><p>Essences, grades, finitions et normes de fabrication.</p><a href="#">Télécharger →</a></div>
+      </div>
+      <div class="ressource">
+        <div class="img" style="background-image:url('https://placehold.co/600x300/b98a5e/fff?text=Catalogue')"></div>
+        <div class="corps"><span class="type">Catalogue</span><h3>Gamme complète 2025</h3><p>Le catalogue produit en format PDF, à jour.</p><a href="#">Télécharger →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ============ FORMULAIRE ============ -->
-    <section id="devis">
-        <div class="wrap formulaire">
-            <div class="img"></div>
-            <form>
-                <h3>Demande de soumission</h3>
-                <p style="font-size:14px;color:var(--gris);margin-bottom:10px">Réponse sous 48 h ouvrées par un
-                    conseiller dédié.</p>
-                <label>Entreprise *</label><input type="text" placeholder="Nom de l'entreprise" required>
-                <label>Type d'entreprise *</label>
-                <select required>
-                    <option>Entrepreneur général</option>
-                    <option>Prémonteur / fabricant portes-fenêtres</option>
-                    <option>Quincaillerie</option>
-                    <option>Autre</option>
-                </select>
-                <label>Types de projets</label>
-                <input type="text" placeholder="Résidentiel, commercial, volumes…">
-                <label>Nom et courriel *</label>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-                    <input type="text" placeholder="Votre nom" required>
-                    <input type="email" placeholder="Courriel" required>
-                </div>
-                <label>Votre besoin</label>
-                <textarea placeholder="Produits, volumes, échéancier de chantier…"></textarea>
-                <button type="submit" class="btn-envoyer">Envoyer ma demande</button>
-                <p style="font-size:12px;color:var(--gris);margin-top:10px">Sans engagement.</p>
-            </form>
-        </div>
-    </section>
+<!-- ============ FORMULAIRE ============ -->
+<section id="devis">
+  <div class="wrap formulaire">
+    <div class="img"></div>
+    <form>
+      <h3>Demande de soumission</h3>
+      <p style="font-size:14px;color:var(--gris);margin-bottom:10px">Réponse sous 48 h ouvrées par un conseiller dédié.</p>
+      <label>Entreprise *</label><input type="text" placeholder="Nom de l'entreprise" required>
+      <label>Type d'entreprise *</label>
+      <select required>
+        <option>Entrepreneur général / promoteur</option>
+        <option>Prémonteur / fabricant portes-fenêtres</option>
+        <option>Quincaillerie</option>
+        <option>Autre</option>
+      </select>
+      <label>Types de projets</label>
+      <input type="text" placeholder="Résidentiel, commercial, volumes…">
+      <label>Nom et courriel *</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Courriel" required>
+      </div>
+      <label>Votre besoin</label>
+      <textarea placeholder="Produits, volumes, échéancier de chantier…"></textarea>
+      <button type="submit" class="btn-envoyer">Envoyer ma demande</button>
+      <p style="font-size:12px;color:var(--gris);margin-top:10px">Sans engagement.</p>
+    </form>
+  </div>
+</section>
 
-    <!-- ============ TÉMOIGNAGES ============ -->
-    <section class="section-grise">
-        <div class="wrap">
-            <h2>Références</h2>
-            <div class="temoignages">
-                <div class="temoignage">« Les livraisons sont coordonnées avec notre calendrier ; la planification en
-                    est simplifiée. »<strong>— Entrepreneur général, Montérégie</strong></div>
-                <div class="temoignage">« Des produits conformes et une documentation complète pour nos dossiers.
-                    »<strong>— Entrepreneur général, Québec</strong></div>
-                <div class="temoignage">« Des composantes à façon qui accélèrent la pose sur nos chantiers. »<strong>—
-                        Entrepreneur général, Chaudière-Appalaches</strong></div>
-            </div>
-        </div>
-    </section>
+<!-- ============ TÉMOIGNAGES ============ -->
+<section class="section-grise">
+  <div class="wrap">
+    <h2>Références</h2>
+    <div class="temoignages">
+      <div class="temoignage">« Des composantes à façon qui accélèrent la pose sur nos chantiers. »<strong>— Entrepreneur général, Chaudière-Appalaches</strong></div>
+      <div class="temoignage">« Les livraisons sont coordonnées avec notre calendrier ; la planification en est simplifiée. »<strong>— Entrepreneur général, Montérégie</strong></div>
+      <div class="temoignage">« Des produits conformes et une documentation complète pour nos dossiers. »<strong>— Entrepreneur général, Québec</strong></div>
+    </div>
+  </div>
+</section>
 
-    <!-- ============ PIED DE PAGE ============ -->
-    <footer>
-        <div class="wrap">
-            <div>© 2025 Interbois — Saint-Odilon-de-Cranbourne, Québec</div>
-            <div><a href="#">Professionnels</a> · <a href="#">Distributeurs</a> · <a href="#">Carrières</a></div>
-        </div>
-    </footer>
+<!-- ============ PIED DE PAGE ============ -->
+<footer>
+  <div class="wrap">
+    <div>© 2025 Interbois — Saint-Odilon-de-Cranbourne, Québec</div>
+    <div><a href="#">Professionnels</a> · <a href="#">Distributeurs</a> · <a href="#">Carrières</a></div>
+  </div>
+</footer>
 
 </body>
-
 </html>
