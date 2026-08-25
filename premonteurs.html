@@ -1,240 +1,463 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./support.js"></script>
 </head>
+
 <body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="_ds/interbois-design-system-064f6a90-1343-4261-a30a-4665dd01eb44/colors_and_type.css">
-  <script src="_ds/interbois-design-system-064f6a90-1343-4261-a30a-4665dd01eb44/_ds_bundle.js"></script>
-  <style>
-    body{margin:0}
-    a{text-decoration:none}
-  </style>
-</helmet>
+  <x-dc>
+    <helmet>
+      <link rel="stylesheet"
+        href="_ds/interbois-design-system-064f6a90-1343-4261-a30a-4665dd01eb44/colors_and_type.css">
+      <script src="_ds/interbois-design-system-064f6a90-1343-4261-a30a-4665dd01eb44/_ds_bundle.js"></script>
+      <style>
+        body {
+          margin: 0
+        }
 
-<div style="font-family:var(--font-sans);background:var(--bg);color:var(--fg1)">
+        a {
+          text-decoration: none
+        }
+      </style>
+    </helmet>
 
-  <div style="position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:var(--bw-hair) solid var(--border-strong)">
-    <div style="max-width:var(--container);margin:0 auto;padding:0 var(--gutter);height:72px;display:flex;align-items:center;justify-content:space-between">
-      <a href="#"><img src="assets/logo-black.png" alt="interbois" style="height:20px;width:auto;display:block"></a>
-      <nav style="display:flex;align-items:center;gap:36px">
-        <a href="#" style="font-size:14px;font-weight:500;color:var(--fg1)" style-hover="color:var(--ib-orange)">Produits</a>
-        <a href="#" style="font-size:14px;font-weight:500;color:var(--fg1)" style-hover="color:var(--ib-orange)">Réalisations</a>
-        <a href="#" style="font-size:14px;font-weight:500;color:var(--fg1)" style-hover="color:var(--ib-orange)">Documentation</a>
-        <a href="#" style="font-size:14px;font-weight:500;color:var(--fg1)" style-hover="color:var(--ib-orange)">Professionnels</a>
-        <a href="#devis" style="background:var(--ib-black);color:var(--ib-white);padding:11px 22px;font-size:14px;font-weight:600" style-hover="background:var(--ib-orange)">Demander une soumission</a>
-      </nav>
-    </div>
-  </div>
+    <div style="font-family:var(--font-sans);background:var(--bg);color:var(--fg1)">
 
-  <section style="background:var(--ib-black);color:var(--fg-invert)">
-    <div style="max-width:var(--container);margin:0 auto;padding:56px var(--gutter) 0;display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center">
-      <div style="padding-bottom:64px">
-        <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ib-grey-medium);margin:0 0 28px 0">
-          <a href="#" style="color:var(--ib-grey-medium)" style-hover="color:var(--ib-orange)">Accueil</a> / Professionnels / Prémonteurs &amp; fabricants de portes et fenêtres
-        </p>
-        <h1 style="font-size:var(--fs-h1);font-weight:var(--fw-black);letter-spacing:var(--ls-display);line-height:var(--lh-tight);color:var(--fg-invert);margin:0 0 22px 0;max-width:640px">Moulures et composantes qui simplifient votre exécution</h1>
-        <p style="font-size:18px;line-height:var(--lh-relaxed);color:var(--ib-grey-medium);max-width:560px;margin:0 0 36px 0">Interbois fabrique des moulures et des composantes de portes et fenêtres conçues pour simplifier votre production : moins de main-d'œuvre, plus de constance, des livraisons coordonnées à votre calendrier.</p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px">
-          <a href="#devis" style="background:var(--ib-white);color:var(--ib-black);padding:14px 28px;font-size:15px;font-weight:700" style-hover="background:var(--ib-orange);color:var(--ib-white)">Demander une soumission</a>
-          <a href="#" style="border:1px solid var(--ib-white);color:var(--ib-white);padding:14px 28px;font-size:15px;font-weight:700" style-hover="border-color:var(--ib-orange);color:var(--ib-orange)">Consulter la documentation technique</a>
-        </div>
-        <div style="display:flex;gap:28px;flex-wrap:wrap">
-          <span style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--ib-white)"><span style="width:14px;height:7px;background:var(--ib-orange);border-radius:14px 14px 0 0;display:inline-block;flex:none"></span>Simplification de l'exécution</span>
-          <span style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--ib-white)"><span style="width:14px;height:7px;background:var(--ib-orange);border-radius:14px 14px 0 0;display:inline-block;flex:none"></span>Constance lot après lot</span>
-          <span style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--ib-white)"><span style="width:14px;height:7px;background:var(--ib-orange);border-radius:14px 14px 0 0;display:inline-block;flex:none"></span>Livraison coordonnée aux chantiers</span>
+      <div
+        style="position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:var(--bw-hair) solid var(--border-strong)">
+        <div
+          style="max-width:var(--container);margin:0 auto;padding:0 var(--gutter);height:72px;display:flex;align-items:center;justify-content:space-between">
+          <a href="#"><img src="assets/logo-black.png" alt="interbois" style="height:20px;width:auto;display:block"></a>
+          <nav style="display:flex;align-items:center;gap:36px">
+            <a href="#" style="font-size:14px;font-weight:500;color:var(--fg1)"
+              style-hover="color:var(--ib-orange)">Produits</a>
+            <a href="#" style="font-size:14px;font-weight:500;color:var(--fg1)"
+              style-hover="color:var(--ib-orange)">Réalisations</a>
+            <a href="#" style="font-size:14px;font-weight:500;color:var(--fg1)"
+              style-hover="color:var(--ib-orange)">Documentation</a>
+            <a href="#" style="font-size:14px;font-weight:500;color:var(--fg1)"
+              style-hover="color:var(--ib-orange)">Professionnels</a>
+            <a href="#devis"
+              style="background:var(--ib-black);color:var(--ib-white);padding:11px 22px;font-size:14px;font-weight:600"
+              style-hover="background:var(--ib-orange)">Demander une soumission</a>
+          </nav>
         </div>
       </div>
-      <div style="align-self:stretch;min-height:460px;background-image:url('https://placehold.co/900x1000/6b5a4a/fff?text=Assemblage+portes+en+usine');background-size:cover;background-position:center"></div>
-    </div>
-  </section>
 
-  <div style="background:var(--bg-alt);color:var(--fg1);text-align:center;padding:22px var(--gutter);display:flex;align-items:center;justify-content:center;gap:12px">
-    <span style="width:16px;height:8px;background:var(--ib-orange);border-radius:16px 16px 0 0;display:inline-block;flex:none"></span>
-    <span style="font-size:16px;font-weight:600">Une offre qui simplifie l'exécution, réduit la main-d'œuvre et améliore la constance de vos assemblages.</span>
-  </div>
+      <!-- Héro page prémonteurs — photo usine en arrière-plan -->
+      <section class="hero-premonteur" style="background:var(--ib-black);color:var(--fg-invert)">
+        <div class="hero-content">
+          <p class="breadcrumb"><a href="#" style="color:var(--fg-invert)">Accueil</a> / Professionnels / Prémonteurs
+            &amp; fabricants de portes et fenêtres</p>
+          <h1>Moulures et composantes qui simplifient votre exécution</h1>
+          <p>Interbois fabrique des moulures et des composantes de portes et fenêtres conçues pour simplifier votre
+            production : moins de main-d'œuvre, plus de constance, des livraisons coordonnées à votre calendrier.</p>
+          <div class="hero-actions">
+            <a href="#devis" class="btn btn-blanc">Demander une soumission</a>
+            <a href="#" class="btn btn-outline">Consulter la documentation technique</a>
+          </div>
+        </div>
+      </section>
 
-  <section style="padding:96px var(--gutter)">
-    <div style="max-width:var(--container);margin:0 auto">
-      <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg2);font-weight:600;margin:0 0 12px 0">Réalisations</p>
-      <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 12px 0">Réalisations</h2>
-      <p style="color:var(--fg2);max-width:560px;margin:0 0 40px 0;font-size:16px">Exemples d'assemblages et d'installations de production.</p>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:2px">
-        <div style="grid-column:span 2;grid-row:span 2;position:relative;overflow:hidden;background-image:url('https://placehold.co/900x700/8a6f52/fff?text=Assemblages');background-size:cover;background-position:center">
-          <span style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Assemblages réalisés en usine</span>
-        </div>
-        <div style="position:relative;overflow:hidden;background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Livraison+chantier');background-size:cover;background-position:center">
-          <span style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Livraison coordonnée sur chantier</span>
-        </div>
-        <div style="position:relative;overflow:hidden;background-image:url('https://placehold.co/600x400/2b2420/fff?text=Usine');background-size:cover;background-position:center">
-          <span style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Usine de Saint-Odilon-de-Cranbourne</span>
-        </div>
-        <div style="grid-column:span 2;position:relative;overflow:hidden;background-image:url('https://placehold.co/900x400/5a4a3c/fff?text=Centre+distribution');background-size:cover;background-position:center">
-          <span style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Centre de distribution (2026)</span>
-        </div>
-        <div style="position:relative;overflow:hidden;background-image:url('https://placehold.co/600x400/d8b48f/fff?text=Profils');background-size:cover;background-position:center">
-          <span style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Moulures et profils</span>
-        </div>
+      <style>
+        .hero-premonteur {
+          position: relative;
+          min-height: 88vh;
+          display: flex;
+          align-items: center;
+          padding: 120px 5% 80px;
+          /* La photo en arrière-plan, assombrie pour la lisibilité du texte */
+          background-image:
+            linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .75)),
+            url('photo-header-premonteur.jpeg');
+          /* ⚠️ à remplacer par le chemin réel de la photo */
+          background-size: cover;
+          background-position: center;
+        }
+
+        .hero-premonteur .hero-content {
+          max-width: 720px
+        }
+
+        .hero-premonteur .breadcrumb {
+          font-size: 13px;
+          opacity: .85;
+          margin-bottom: 24px
+        }
+
+        .hero-premonteur h1 {
+          font-size: 42px;
+          line-height: 1.15;
+          margin-bottom: 18px
+        }
+
+        .hero-premonteur p {
+          font-size: 18px;
+          opacity: .95;
+          max-width: 600px
+        }
+
+        .hero-actions {
+          display: flex;
+          gap: 14px;
+          margin-top: 32px;
+          flex-wrap: wrap
+        }
+
+        .btn {
+          display: inline-block;
+          padding: 14px 28px;
+          border-radius: 5px;
+          font-weight: 700;
+          font-size: 15px;
+          text-decoration: none
+        }
+
+        .btn-blanc {
+          background: var(--fg-invert);
+          color: var(--ib-black)
+        }
+
+        .btn-outline {
+          border: 2px solid var(--fg-invert);
+          color: var(--fg-invert)
+        }
+
+        @media(max-width:900px) {
+          .hero-premonteur {
+            min-height: auto;
+            padding: 100px 5% 60px
+          }
+
+          .hero-premonteur h1 {
+            font-size: 30px
+          }
+        }
+      </style>
+
+
+      <div
+        style="background:var(--bg-alt);color:var(--fg1);text-align:center;padding:22px var(--gutter);display:flex;align-items:center;justify-content:center;gap:12px">
+        <span
+          style="width:16px;height:8px;background:var(--ib-orange);border-radius:16px 16px 0 0;display:inline-block;flex:none"></span>
+        <span style="font-size:16px;font-weight:600">Une offre qui simplifie l'exécution, réduit la main-d'œuvre et
+          améliore la constance de vos assemblages.</span>
       </div>
-    </div>
-  </section>
 
-  <section style="background:var(--bg-alt);padding:96px var(--gutter)">
-    <div style="max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
-      <div style="min-height:440px;background-image:url('https://placehold.co/800x900/2b2420/fff?text=Usine+Interbois+Beauce');background-size:cover;background-position:center"></div>
-      <div>
-        <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 12px 0">Un partenaire de fabrication établi</h2>
-        <p style="color:var(--fg2);max-width:560px;margin:0 0 36px 0;font-size:16px">Des produits pensés pour votre production, pas seulement pour votre inventaire.</p>
-        <div style="display:flex;flex-direction:column;gap:28px">
-          <div style="display:flex;gap:18px">
-            <span style="flex:0 0 48px;height:48px;border:1px solid var(--ib-black);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span>
-            <div><h3 style="font-size:17px;font-weight:600;margin:0 0 4px 0">Simplification de l'exécution</h3><p style="font-size:14px;color:var(--fg2);margin:0">Nos moulures et composantes sont conçues pour simplifier l'exécution, réduire la main-d'œuvre et améliorer la constance de vos assemblages.</p></div>
-          </div>
-          <div style="display:flex;gap:18px">
-            <span style="flex:0 0 48px;height:48px;border:1px solid var(--ib-black);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-            <div><h3 style="font-size:17px;font-weight:600;margin:0 0 4px 0">Constance et qualité</h3><p style="font-size:14px;color:var(--fg2);margin:0">Une qualité constante d'une commande à l'autre, documentée de la soumission à la livraison.</p></div>
-          </div>
-          <div style="display:flex;gap:18px">
-            <span style="flex:0 0 48px;height:48px;border:1px solid var(--ib-black);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h11v10H3z"/><path d="M14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span>
-            <div><h3 style="font-size:17px;font-weight:600;margin:0 0 4px 0">Livraison coordonnée</h3><p style="font-size:14px;color:var(--fg2);margin:0">Nos livraisons sont planifiées avec votre calendrier et acheminées directement sur les chantiers.</p></div>
-          </div>
-          <div style="display:flex;gap:18px">
-            <span style="flex:0 0 48px;height:48px;border:1px solid var(--ib-black);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
-            <div><h3 style="font-size:17px;font-weight:600;margin:0 0 4px 0">Expérience</h3><p style="font-size:14px;color:var(--fg2);margin:0">Trente ans d'expérience auprès des prémonteurs et fabricants de portes et fenêtres du Québec.</p></div>
+      <section style="padding:96px var(--gutter)">
+        <div style="max-width:var(--container);margin:0 auto">
+          <p
+            style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg2);font-weight:600;margin:0 0 12px 0">
+            Réalisations</p>
+          <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 12px 0">Réalisations</h2>
+          <p style="color:var(--fg2);max-width:560px;margin:0 0 40px 0;font-size:16px">Exemples d'assemblages et
+            d'installations de production.</p>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:2px">
+            <div
+              style="grid-column:span 2;grid-row:span 2;position:relative;overflow:hidden;background-image:url('https://placehold.co/900x700/8a6f52/fff?text=Assemblages');background-size:cover;background-position:center">
+              <span
+                style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Assemblages
+                réalisés en usine</span>
+            </div>
+            <div
+              style="position:relative;overflow:hidden;background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Livraison+chantier');background-size:cover;background-position:center">
+              <span
+                style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Livraison
+                coordonnée sur chantier</span>
+            </div>
+            <div
+              style="position:relative;overflow:hidden;background-image:url('https://placehold.co/600x400/2b2420/fff?text=Usine');background-size:cover;background-position:center">
+              <span
+                style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Usine
+                de Saint-Odilon-de-Cranbourne</span>
+            </div>
+            <div
+              style="grid-column:span 2;position:relative;overflow:hidden;background-image:url('https://placehold.co/900x400/5a4a3c/fff?text=Centre+distribution');background-size:cover;background-position:center">
+              <span
+                style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Centre
+                de distribution (2026)</span>
+            </div>
+            <div
+              style="position:relative;overflow:hidden;background-image:url('https://placehold.co/600x400/d8b48f/fff?text=Profils');background-size:cover;background-position:center">
+              <span
+                style="position:absolute;bottom:0;left:0;right:0;padding:32px 16px 14px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))">Moulures
+                et profils</span>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section style="padding:96px var(--gutter)">
-    <div style="max-width:var(--container);margin:0 auto">
-      <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 12px 0">Nos gammes pour votre production</h2>
-      <p style="color:var(--fg2);max-width:560px;margin:0 0 40px 0;font-size:16px">Une offre concentrée sur les produits qui simplifient vos assemblages.</p>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px">
-        <div style="background:#fff;border:1px solid var(--ib-black)">
-          <div style="height:210px;background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Moulures');background-size:cover;background-position:center"></div>
-          <div style="padding:24px">
-            <h3 style="font-size:17px;font-weight:600;margin:0 0 8px 0">Moulures et accessoires</h3>
-            <p style="font-size:13px;color:var(--fg2);margin:0 0 14px 0">Plinthes, cadrages et profils pour vos assemblages.</p>
-            <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black)" style-hover="color:var(--ib-orange)">Voir la gamme →</a>
+      <section style="background:var(--bg-alt);padding:96px var(--gutter)">
+        <div
+          style="max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+          <div
+            style="min-height:440px;background-image:url('https://placehold.co/800x900/2b2420/fff?text=Usine+Interbois+Beauce');background-size:cover;background-position:center">
+          </div>
+          <div>
+            <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 12px 0">Un partenaire de fabrication
+              établi</h2>
+            <p style="color:var(--fg2);max-width:560px;margin:0 0 36px 0;font-size:16px">Des produits pensés pour votre
+              production, pas seulement pour votre inventaire.</p>
+            <div style="display:flex;flex-direction:column;gap:28px">
+              <div style="display:flex;gap:18px">
+                <span
+                  style="flex:0 0 48px;height:48px;border:1px solid var(--ib-black);display:flex;align-items:center;justify-content:center"><svg
+                    viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                      d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1" />
+                  </svg></span>
+                <div>
+                  <h3 style="font-size:17px;font-weight:600;margin:0 0 4px 0">Simplification de l'exécution</h3>
+                  <p style="font-size:14px;color:var(--fg2);margin:0">Nos moulures et composantes sont conçues pour
+                    simplifier l'exécution, réduire la main-d'œuvre et améliorer la constance de vos assemblages.</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:18px">
+                <span
+                  style="flex:0 0 48px;height:48px;border:1px solid var(--ib-black);display:flex;align-items:center;justify-content:center"><svg
+                    viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" />
+                    <path d="M9 12l2 2 4-4" />
+                  </svg></span>
+                <div>
+                  <h3 style="font-size:17px;font-weight:600;margin:0 0 4px 0">Constance et qualité</h3>
+                  <p style="font-size:14px;color:var(--fg2);margin:0">Une qualité constante d'une commande à l'autre,
+                    documentée de la soumission à la livraison.</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:18px">
+                <span
+                  style="flex:0 0 48px;height:48px;border:1px solid var(--ib-black);display:flex;align-items:center;justify-content:center"><svg
+                    viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M3 6h11v10H3z" />
+                    <path d="M14 9h4l3 3v4h-7z" />
+                    <circle cx="7" cy="18" r="1.6" />
+                    <circle cx="17" cy="18" r="1.6" />
+                  </svg></span>
+                <div>
+                  <h3 style="font-size:17px;font-weight:600;margin:0 0 4px 0">Livraison coordonnée</h3>
+                  <p style="font-size:14px;color:var(--fg2);margin:0">Nos livraisons sont planifiées avec votre
+                    calendrier et acheminées directement sur les chantiers.</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:18px">
+                <span
+                  style="flex:0 0 48px;height:48px;border:1px solid var(--ib-black);display:flex;align-items:center;justify-content:center"><svg
+                    viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 3" />
+                  </svg></span>
+                <div>
+                  <h3 style="font-size:17px;font-weight:600;margin:0 0 4px 0">Expérience</h3>
+                  <p style="font-size:14px;color:var(--fg2);margin:0">Trente ans d'expérience auprès des prémonteurs et
+                    fabricants de portes et fenêtres du Québec.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid var(--ib-black)">
-          <div style="height:210px;background-image:url('https://placehold.co/600x400/8a6f52/fff?text=Composantes+portes+fenetres');background-size:cover;background-position:center"></div>
-          <div style="padding:24px">
-            <h3 style="font-size:17px;font-weight:600;margin:0 0 8px 0">Composantes de portes et fenêtres</h3>
-            <p style="font-size:13px;color:var(--fg2);margin:0 0 14px 0">Jambages et profils aux dimensions de vos cadres, à façon.</p>
-            <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black)" style-hover="color:var(--ib-orange)">Voir la gamme →</a>
+      </section>
+
+      <section style="padding:96px var(--gutter)">
+        <div style="max-width:var(--container);margin:0 auto">
+          <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 12px 0">Nos gammes pour votre
+            production</h2>
+          <p style="color:var(--fg2);max-width:560px;margin:0 0 40px 0;font-size:16px">Une offre concentrée sur les
+            produits qui simplifient vos assemblages.</p>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px">
+            <div style="background:#fff;border:1px solid var(--ib-black)">
+              <div
+                style="height:210px;background-image:url('https://placehold.co/600x400/b98a5e/fff?text=Moulures');background-size:cover;background-position:center">
+              </div>
+              <div style="padding:24px">
+                <h3 style="font-size:17px;font-weight:600;margin:0 0 8px 0">Moulures et accessoires</h3>
+                <p style="font-size:13px;color:var(--fg2);margin:0 0 14px 0">Plinthes, cadrages et profils pour vos
+                  assemblages.</p>
+                <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black)"
+                  style-hover="color:var(--ib-orange)">Voir la gamme →</a>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid var(--ib-black)">
+              <div
+                style="height:210px;background-image:url('https://placehold.co/600x400/8a6f52/fff?text=Composantes+portes+fenetres');background-size:cover;background-position:center">
+              </div>
+              <div style="padding:24px">
+                <h3 style="font-size:17px;font-weight:600;margin:0 0 8px 0">Composantes de portes et fenêtres</h3>
+                <p style="font-size:13px;color:var(--fg2);margin:0 0 14px 0">Jambages et profils aux dimensions de vos
+                  cadres, à façon.</p>
+                <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black)"
+                  style-hover="color:var(--ib-orange)">Voir la gamme →</a>
+              </div>
+            </div>
+          </div>
+          <div
+            style="margin-top:32px;padding:22px 26px;background:var(--bg-alt);border-left:var(--bw-heavy) solid var(--ib-orange);font-size:14px;color:var(--fg2)">
+            Le développement de nos composantes auprès des promoteurs et fabricants de portes et fenêtres se fait de
+            façon sélective, selon le volume, la marge et la récurrence des projets.</div>
+        </div>
+      </section>
+
+      <section style="background:var(--bg-alt);padding:96px var(--gutter)">
+        <div style="max-width:var(--container);margin:0 auto">
+          <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 12px 0">Ressources techniques</h2>
+          <p style="color:var(--fg2);max-width:560px;margin:0 0 40px 0;font-size:16px">Documentation à destination de
+            vos équipes d'ingénierie et de production.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+            <div style="background:#fff;border:1px solid var(--ib-black);display:flex;flex-direction:column">
+              <div
+                style="height:130px;background-image:url('https://placehold.co/600x300/2b2420/fff?text=DWG');background-size:cover;background-position:center">
+              </div>
+              <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">
+                <span
+                  style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ib-orange);font-weight:700">Fichiers
+                  CAO</span>
+                <h3 style="font-size:16px;font-weight:600;margin:0">Bibliothèque DWG/DXF</h3>
+                <p style="font-size:13px;color:var(--fg2);margin:0">Profils et composantes prêts à insérer dans vos
+                  plans.</p>
+                <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black);margin-top:auto"
+                  style-hover="color:var(--ib-orange)">Télécharger →</a>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid var(--ib-black);display:flex;flex-direction:column">
+              <div
+                style="height:130px;background-image:url('https://placehold.co/600x300/5a4a3c/fff?text=Specs');background-size:cover;background-position:center">
+              </div>
+              <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">
+                <span
+                  style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ib-orange);font-weight:700">Guide
+                  technique</span>
+                <h3 style="font-size:16px;font-weight:600;margin:0">Spécifications et tolérances</h3>
+                <p style="font-size:13px;color:var(--fg2);margin:0">Essences, grades, finitions et normes de
+                  fabrication.</p>
+                <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black);margin-top:auto"
+                  style-hover="color:var(--ib-orange)">Télécharger →</a>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid var(--ib-black);display:flex;flex-direction:column">
+              <div
+                style="height:130px;background-image:url('https://placehold.co/600x300/b98a5e/fff?text=Catalogue');background-size:cover;background-position:center">
+              </div>
+              <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">
+                <span
+                  style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ib-orange);font-weight:700">Catalogue</span>
+                <h3 style="font-size:16px;font-weight:600;margin:0">Gamme complète 2025</h3>
+                <p style="font-size:13px;color:var(--fg2);margin:0">Le catalogue produit en format PDF, à jour.</p>
+                <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black);margin-top:auto"
+                  style-hover="color:var(--ib-orange)">Télécharger →</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="margin-top:32px;padding:22px 26px;background:var(--bg-alt);border-left:var(--bw-heavy) solid var(--ib-orange);font-size:14px;color:var(--fg2)">Le développement de nos composantes auprès des promoteurs et fabricants de portes et fenêtres se fait de façon sélective, selon le volume, la marge et la récurrence des projets.</div>
-    </div>
-  </section>
+      </section>
 
-  <section style="background:var(--bg-alt);padding:96px var(--gutter)">
-    <div style="max-width:var(--container);margin:0 auto">
-      <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 12px 0">Ressources techniques</h2>
-      <p style="color:var(--fg2);max-width:560px;margin:0 0 40px 0;font-size:16px">Documentation à destination de vos équipes d'ingénierie et de production.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
-        <div style="background:#fff;border:1px solid var(--ib-black);display:flex;flex-direction:column">
-          <div style="height:130px;background-image:url('https://placehold.co/600x300/2b2420/fff?text=DWG');background-size:cover;background-position:center"></div>
-          <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">
-            <span style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ib-orange);font-weight:700">Fichiers CAO</span>
-            <h3 style="font-size:16px;font-weight:600;margin:0">Bibliothèque DWG/DXF</h3>
-            <p style="font-size:13px;color:var(--fg2);margin:0">Profils et composantes prêts à insérer dans vos plans.</p>
-            <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black);margin-top:auto" style-hover="color:var(--ib-orange)">Télécharger →</a>
+      <section id="devis" style="padding:96px var(--gutter)">
+        <div
+          style="max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch">
+          <div
+            style="min-height:100%;background-image:url('https://placehold.co/800x900/2b2420/fff?text=Usine+Interbois');background-size:cover;background-position:center">
+          </div>
+          <form style="background:#fff;border:1px solid var(--ib-black);padding:36px">
+            <h3 style="font-size:22px;font-weight:700;margin:0 0 10px 0">Demande de soumission</h3>
+            <p style="font-size:14px;color:var(--fg2);margin:0 0 14px 0">Réponse sous 48 h ouvrées par un conseiller
+              dédié.</p>
+            <label
+              style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Entreprise
+              *</label>
+            <input type="text" placeholder="Nom de l'entreprise" required
+              style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box"
+              style-focus="outline:2px solid var(--ib-orange);outline-offset:2px">
+            <label
+              style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Secteur
+              d'activité *</label>
+            <select required
+              style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box;background:#fff">
+              <option>Prémonteur / fabricant portes-fenêtres</option>
+              <option>Entrepreneur général / promoteur</option>
+              <option>Quincaillerie</option>
+              <option>Autre</option>
+            </select>
+            <label
+              style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Volumes
+              estimés</label>
+            <input type="text" placeholder="Ex. : 500 à 5 000 unités/an"
+              style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box"
+              style-focus="outline:2px solid var(--ib-orange);outline-offset:2px">
+            <label
+              style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Nom
+              et courriel *</label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <input type="text" placeholder="Votre nom" required
+                style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box"
+                style-focus="outline:2px solid var(--ib-orange);outline-offset:2px">
+              <input type="email" placeholder="Courriel" required
+                style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box"
+                style-focus="outline:2px solid var(--ib-orange);outline-offset:2px">
+            </div>
+            <label
+              style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Votre
+              besoin</label>
+            <textarea placeholder="Gammes concernées, volumes, échéancier…"
+              style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box;min-height:90px;resize:vertical"
+              style-focus="outline:2px solid var(--ib-orange);outline-offset:2px"></textarea>
+            <button type="submit"
+              style="background:var(--ib-black);color:#fff;border:none;width:100%;padding:15px;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px"
+              style-hover="background:var(--ib-orange)">Envoyer ma demande</button>
+            <p style="font-size:12px;color:var(--fg2);margin:12px 0 0 0">Sans engagement.</p>
+          </form>
+        </div>
+      </section>
+
+      <section style="background:var(--bg-alt);padding:96px var(--gutter)">
+        <div style="max-width:var(--container);margin:0 auto">
+          <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 40px 0">Références</h2>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+            <div style="background:#fff;border:1px solid var(--border);padding:28px">
+              <p
+                style="font-family:var(--font-serif);font-style:italic;font-size:15px;color:var(--fg1);margin:0 0 16px 0;line-height:1.6">
+                « Des moulures et composantes qui simplifient nos assemblages : moins de main-d'œuvre, plus de
+                constance. »</p>
+              <span
+                style="font-size:12px;letter-spacing:.06em;color:var(--fg2);text-transform:uppercase;font-weight:600">—
+                Prémonteur, Montérégie</span>
+            </div>
+            <div style="background:#fff;border:1px solid var(--border);padding:28px">
+              <p
+                style="font-family:var(--font-serif);font-style:italic;font-size:15px;color:var(--fg1);margin:0 0 16px 0;line-height:1.6">
+                « Une qualité constante, documentée de la soumission à la livraison. »</p>
+              <span
+                style="font-size:12px;letter-spacing:.06em;color:var(--fg2);text-transform:uppercase;font-weight:600">—
+                Fabricant de portes, Québec</span>
+            </div>
+            <div style="background:#fff;border:1px solid var(--border);padding:28px">
+              <p
+                style="font-family:var(--font-serif);font-style:italic;font-size:15px;color:var(--fg1);margin:0 0 16px 0;line-height:1.6">
+                « Des livraisons coordonnées avec notre calendrier ; la planification en est simplifiée. »</p>
+              <span
+                style="font-size:12px;letter-spacing:.06em;color:var(--fg2);text-transform:uppercase;font-weight:600">—
+                Fabricant de fenêtres, Saguenay</span>
+            </div>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid var(--ib-black);display:flex;flex-direction:column">
-          <div style="height:130px;background-image:url('https://placehold.co/600x300/5a4a3c/fff?text=Specs');background-size:cover;background-position:center"></div>
-          <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">
-            <span style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ib-orange);font-weight:700">Guide technique</span>
-            <h3 style="font-size:16px;font-weight:600;margin:0">Spécifications et tolérances</h3>
-            <p style="font-size:13px;color:var(--fg2);margin:0">Essences, grades, finitions et normes de fabrication.</p>
-            <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black);margin-top:auto" style-hover="color:var(--ib-orange)">Télécharger →</a>
+      </section>
+
+      <footer style="background:var(--ib-black);color:var(--ib-grey-medium);padding:40px var(--gutter);font-size:13px">
+        <div
+          style="max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center">
+          <div>© 2025 Interbois — Saint-Odilon-de-Cranbourne, Québec</div>
+          <div style="display:flex;gap:8px">
+            <a href="#" style="color:#fff" style-hover="color:var(--ib-orange)">Professionnels</a><span>·</span>
+            <a href="#" style="color:#fff" style-hover="color:var(--ib-orange)">Distributeurs</a><span>·</span>
+            <a href="#" style="color:#fff" style-hover="color:var(--ib-orange)">Carrières</a>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid var(--ib-black);display:flex;flex-direction:column">
-          <div style="height:130px;background-image:url('https://placehold.co/600x300/b98a5e/fff?text=Catalogue');background-size:cover;background-position:center"></div>
-          <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">
-            <span style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ib-orange);font-weight:700">Catalogue</span>
-            <h3 style="font-size:16px;font-weight:600;margin:0">Gamme complète 2025</h3>
-            <p style="font-size:13px;color:var(--fg2);margin:0">Le catalogue produit en format PDF, à jour.</p>
-            <a href="#" style="font-weight:700;font-size:14px;color:var(--ib-black);margin-top:auto" style-hover="color:var(--ib-orange)">Télécharger →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </footer>
 
-  <section id="devis" style="padding:96px var(--gutter)">
-    <div style="max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch">
-      <div style="min-height:100%;background-image:url('https://placehold.co/800x900/2b2420/fff?text=Usine+Interbois');background-size:cover;background-position:center"></div>
-      <form style="background:#fff;border:1px solid var(--ib-black);padding:36px">
-        <h3 style="font-size:22px;font-weight:700;margin:0 0 10px 0">Demande de soumission</h3>
-        <p style="font-size:14px;color:var(--fg2);margin:0 0 14px 0">Réponse sous 48 h ouvrées par un conseiller dédié.</p>
-        <label style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Entreprise *</label>
-        <input type="text" placeholder="Nom de l'entreprise" required style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box" style-focus="outline:2px solid var(--ib-orange);outline-offset:2px">
-        <label style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Secteur d'activité *</label>
-        <select required style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box;background:#fff">
-          <option>Prémonteur / fabricant portes-fenêtres</option>
-          <option>Entrepreneur général / promoteur</option>
-          <option>Quincaillerie</option>
-          <option>Autre</option>
-        </select>
-        <label style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Volumes estimés</label>
-        <input type="text" placeholder="Ex. : 500 à 5 000 unités/an" style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box" style-focus="outline:2px solid var(--ib-orange);outline-offset:2px">
-        <label style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Nom et courriel *</label>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <input type="text" placeholder="Votre nom" required style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box" style-focus="outline:2px solid var(--ib-orange);outline-offset:2px">
-          <input type="email" placeholder="Courriel" required style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box" style-focus="outline:2px solid var(--ib-orange);outline-offset:2px">
-        </div>
-        <label style="display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:16px 0 6px">Votre besoin</label>
-        <textarea placeholder="Gammes concernées, volumes, échéancier…" style="width:100%;padding:11px 12px;border:1px solid var(--ib-black);font-size:14px;font-family:inherit;box-sizing:border-box;min-height:90px;resize:vertical" style-focus="outline:2px solid var(--ib-orange);outline-offset:2px"></textarea>
-        <button type="submit" style="background:var(--ib-black);color:#fff;border:none;width:100%;padding:15px;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px" style-hover="background:var(--ib-orange)">Envoyer ma demande</button>
-        <p style="font-size:12px;color:var(--fg2);margin:12px 0 0 0">Sans engagement.</p>
-      </form>
     </div>
-  </section>
-
-  <section style="background:var(--bg-alt);padding:96px var(--gutter)">
-    <div style="max-width:var(--container);margin:0 auto">
-      <h2 style="font-size:var(--fs-h2);font-weight:var(--fw-bold);margin:0 0 40px 0">Références</h2>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
-        <div style="background:#fff;border:1px solid var(--border);padding:28px">
-          <p style="font-family:var(--font-serif);font-style:italic;font-size:15px;color:var(--fg1);margin:0 0 16px 0;line-height:1.6">« Des moulures et composantes qui simplifient nos assemblages : moins de main-d'œuvre, plus de constance. »</p>
-          <span style="font-size:12px;letter-spacing:.06em;color:var(--fg2);text-transform:uppercase;font-weight:600">— Prémonteur, Montérégie</span>
-        </div>
-        <div style="background:#fff;border:1px solid var(--border);padding:28px">
-          <p style="font-family:var(--font-serif);font-style:italic;font-size:15px;color:var(--fg1);margin:0 0 16px 0;line-height:1.6">« Une qualité constante, documentée de la soumission à la livraison. »</p>
-          <span style="font-size:12px;letter-spacing:.06em;color:var(--fg2);text-transform:uppercase;font-weight:600">— Fabricant de portes, Québec</span>
-        </div>
-        <div style="background:#fff;border:1px solid var(--border);padding:28px">
-          <p style="font-family:var(--font-serif);font-style:italic;font-size:15px;color:var(--fg1);margin:0 0 16px 0;line-height:1.6">« Des livraisons coordonnées avec notre calendrier ; la planification en est simplifiée. »</p>
-          <span style="font-size:12px;letter-spacing:.06em;color:var(--fg2);text-transform:uppercase;font-weight:600">— Fabricant de fenêtres, Saguenay</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer style="background:var(--ib-black);color:var(--ib-grey-medium);padding:40px var(--gutter);font-size:13px">
-    <div style="max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center">
-      <div>© 2025 Interbois — Saint-Odilon-de-Cranbourne, Québec</div>
-      <div style="display:flex;gap:8px">
-        <a href="#" style="color:#fff" style-hover="color:var(--ib-orange)">Professionnels</a><span>·</span>
-        <a href="#" style="color:#fff" style-hover="color:var(--ib-orange)">Distributeurs</a><span>·</span>
-        <a href="#" style="color:#fff" style-hover="color:var(--ib-orange)">Carrières</a>
-      </div>
-    </div>
-  </footer>
-
-</div>
-</x-dc>
+  </x-dc>
 </body>
+
 </html>
